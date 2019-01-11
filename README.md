@@ -2,7 +2,7 @@
 基于springboot+MyBatis+FreeMarker等技术的JavaWeb项目------恋家房产平台
 
 
-先简单放几张项目的图吧
+先简单放几张项目的图吧,视频演示放到上面去了。
 
 
 ![image]()
