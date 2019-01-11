@@ -37,6 +37,19 @@
 ![image](https://github.com/29DCH/LovingHome-Real-Estate-Platform/blob/master/img/13.png)
 
 
+博客列表：
+
+
+![image](https://github.com/29DCH/LovingHome-Real-Estate-Platform/blob/master/img/9.png)
+
+
+后台管理：
+
+
+![image](https://github.com/29DCH/LovingHome-Real-Estate-Platform/blob/master/img/1.png)
+
+
+
 房源评分饼状图：
 
 
@@ -71,18 +84,6 @@
 
 
 ![image](https://github.com/29DCH/LovingHome-Real-Estate-Platform/blob/master/img/8.png)
-
-
-后台首页：
-
-
-![image](https://github.com/29DCH/LovingHome-Real-Estate-Platform/blob/master/img/1.png)
-
-
-后台管理：
-
-
-![image](https://github.com/29DCH/LovingHome-Real-Estate-Platform/blob/master/img/1.png)
 
 
 
