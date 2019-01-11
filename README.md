@@ -1,6 +1,17 @@
 # LoveHome-Real-Estate-Platform
 基于springboot+MyBatis+FreeMarker等技术的JavaWeb项目------恋家房产平台
 
+
+先简单放几张项目的图吧
+
+
+![image]()
+
+
+
+
+
+
 技术如下，功能的话见项目内文档
 
 
@@ -50,3 +61,6 @@ poi报表导入导出
 HttpSessionListener监听器统计系统当前在线人数
 
 
+
+
+部署的话挺简单的，导入数据库，修改一下配置文件中的相关信息(我把数据库信息加密了，需要自行修改)，再把nginx和redis简单配置一下，启动起来，项目就能正常运转了。有问题可以联系我。
