@@ -1,0 +1,14 @@
+(未重构)
+微服务部分
+Spring Cloud:
+Eureka服务注册发现
+RestTemplate远程通信
+Hystrix断路器
+ELK日志检索(Elasticsearch,Logstash,Kibana)
+Sleuth
+Zipkin Dashboard(分布式追踪)
+JWT(Token技术,用于分布式环境下的身份验证问题，Json Web Token实现身份认证和鉴权)
+微服务监控(Eureka,Hystrix Dashboard)
+一个服务配置一个数据库
+SpringCloud Ribbon实现负载均衡
+

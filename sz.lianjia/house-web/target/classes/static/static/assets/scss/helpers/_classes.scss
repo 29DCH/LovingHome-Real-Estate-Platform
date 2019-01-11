@@ -1,0 +1,1168 @@
+.page-sub-page {
+  #page-content {
+    &:after { @include page-content-gradient; content: ""; left: 0; height: 110px; position: absolute; top: 0; width: 100%; z-index: -1; }
+  }
+  &.page-submit {
+    h2 { border: none; margin-bottom: 25px; padding-bottom: 0; }
+    .submit-pricing { margin-bottom: 0; }
+  }
+  &.page-create-account {
+    .radio { display: inline-block; margin-right: 50px; margin-bottom: 30px; }
+    h3 { margin-top: 0; }
+  }
+  &.page-create-agency {
+    #page-content {
+      form {
+        > section { margin-bottom: 30px; }
+      }
+    }
+  }
+  &.page-contact {
+    #page-content {
+      section { margin-bottom: 30px; }
+    }
+  }
+  &.page-legal {
+    #page-content {
+      section { margin-bottom: 40px;
+        h3 { font-weight: normal; }
+      }
+    }
+  }
+  &.page-agency-detail {
+    #page-content {
+      address { position: relative; }
+    }
+  }
+  &.page-about-us {
+    .background-image { overflow: visible; }
+    .agent {
+      .wrapper {
+        aside { display: none; }
+      }
+    }
+    #our-team {
+      .agent {
+        .wrapper { padding-left: 110px; }
+        .agent-image { width: 90px; }
+      }
+    }
+  }
+}
+
+#overlay {
+  background:rgba(0,0,0,0.3);
+  display:none;
+  width:100%; height:100%;
+  position:absolute; top:0; left:0; z-index:99998;
+}
+#similar-properties { padding-bottom: 20px;
+  h2 { margin-bottom: 10px !important; }
+}
+
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// Universal Classes
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+.background-color-grey-light { background-color: $color-grey-light; }
+.background-color-grey-medium { background-color: $color-grey-medium; }
+.background-color-grey-dark { background-color: $color-grey-dark; }
+.background-color-default { background-color: $color-default; }
+.background-color-default-darker { background-color: $color-default-darker; }
+.background-image { left: 0; margin: auto; max-width: 100%; position: absolute; right: 0; top: 0;  z-index: -1; height: 100%; overflow: hidden; }
+.button-icon {
+  .fa { margin: 0 10px; }
+}
+.center { text-align: center; }
+.has-fullscreen-map { position: relative;
+  &:before { @include opacity(1); @include transition(.8s); @include font-awesome; animation: animate-loading 3s infinite linear; -webkit-animation: animate-loading 3s infinite linear; content: "\f013"; color: $color-grey-dark; font-size: 30px; position: absolute; top: 0; left: 0; z-index: 1000; width: 26px; height: 30px;  bottom: 0; right: 0; margin: auto; }
+  &:after { @include opacity(1); @include transition(.8s); background-color: #fff; content: ""; position: absolute; top: 0; left: 0; z-index: 999; width: 100%; height: 100%; }
+  &.loaded {
+    &:before, &:after { @include opacity(0); }
+  }
+}
+.has-dark-background { color: #fff;
+  a { color: #fff; }
+}
+.link-icon { color: $color-grey-dark;
+  .fa { color: $color-default; margin: 0 10px; }
+}
+.link-arrow { @include transition(.2s); color: $color-grey-dark; display: inline-block;
+  &:after { @include transition(.2s); @include font-awesome; content: "\f105"; color: $color-default; left: 0; font-size: 18px; margin-left: 10px; vertical-align: middle; position: relative; bottom: 2px; }
+  &:hover { color: $color-grey-dark; cursor: pointer;
+    &:after { color: $color-default-darker; left: 5px; }
+  }
+  &.geo-location {
+    &:after { content: "\f041"; top: -1px; }
+    &:hover {
+      &:after { left: 0; top: -5px; }
+    }
+  }
+  &.back {
+    &:after { display: none; }
+    &:before { @include transition(.2s); @include font-awesome; content: "\f104"; color: $color-default; right: 0; font-size: 18px; margin-right: 10px; vertical-align: middle; position: relative; bottom: 2px; }
+    &:hover { color: $color-grey-dark; cursor: pointer;
+      &:before { color: $color-default-darker; right: 5px; }
+    }
+  }
+}
+.no-border { border: none !important; }
+.no-bottom-margin { margin-bottom: 0 !important; }
+.opacity-10 { @include opacity(.1); }
+.opacity-20 { @include opacity(.2); }
+.text-align-right { text-align: right; }
+.text-underline { text-decoration: underline; }
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// Classes
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+/****
+  A
+****/
+
+// About Us
+
+#about-us {
+  #ceo-section {
+    .cite-title { font-size: 36px; font-weight: lighter; }
+    h3 { color: $color-default-darker; font-size: 24px; font-weight: bold; margin-bottom: 5px; margin-top: 0; }
+    .cite { display: inline-block; margin: 20px 0; width: 70%; }
+  }
+  .image { display: inline-block; margin-bottom: 10px;
+    img { @include box-shadow(0px 1px 1px rgba(0,0,0,.2)); }
+  }
+  .divider-image { @include opacity(.1); margin: 30px 0; max-width: 100%; }
+  .member { margin-bottom: 60px; }
+}
+
+// Account Profile
+
+.account-profile { position: relative;
+  h3 { margin-top: 0; margin-bottom: 30px; }
+  img { width: 100%; margin-bottom: 30px; }
+  form { position: relative; }
+  section { margin-bottom: 0px;
+    &#agency { @include transition(.4s);}
+    &#contact, &#agency {
+      label { display: block; line-height: 38px; }
+    }
+    &#social {
+      .input-group { width: 100%;
+        .input-group-addon { background-color: $color-grey-dark; width: 40px;
+          i { color: #fff; }
+        }
+      }
+    }
+  }
+  .contact-fields { display: table; width: 100%;
+    dt { clear: both }
+    dd { float: right; margin-bottom: 5px; width: 65%;
+    }
+  }
+  .switch { position: absolute; top: 0; right: 0;
+    label { line-height: 0 !important; }
+    .icheckbox { margin-right: 0; }
+  }
+}
+
+// Add your property button (on the map)
+
+.geo-location-wrapper { position: relative; z-index: 1; width: 100%;
+  &:hover {
+    .text { @include opacity(1); right: 50px; pointer-events: none; }
+  }
+  .btn { background-color: #fff; color: $color-default-darker; position: absolute; right: 0px; top: 60px; width: 38px;
+    &:hover { background-color: #fff; color: $color-default; }
+  }
+  .fa { font-size: 20px; }
+  .text { @include opacity(0); @include shadow; @include transition(.4s); color: #fff; background-color: $color-default-darker; padding: 10px; position: absolute; right: 40px; text-align: right; top: 0; pointer-events: none;
+    &:after { width: 0; height: 0; content: ""; border-style: solid; border-width: 4px 0 4px 4px; border-color: transparent transparent transparent $color-default-darker; position: absolute; top: 0; right: -4px; bottom: 0; margin: auto; }
+  }
+}
+
+// Agency
+
+.agency { border-bottom: 1px solid $color-grey-light; display: table; font-size: 12px; padding-bottom: 10px; margin-bottom: 30px; position: relative; width: 100%;
+  address { width: 30%; display: inline-block; vertical-align: top; margin-left: 40px;
+    h3 { margin-top: 0; margin-bottom: 10px; }
+  }
+  h2 { border: none; margin-bottom: 20px; margin-top: 0; padding: 0; }
+  dl { display: inline-block; width: 50%;
+    dd { margin-bottom: 4px; }
+  }
+  .agency-image { display: table-cell; vertical-align: middle; width: 30%; }
+  .wrapper { display: table-cell; width: 70%; }
+}
+
+.agency-image {
+  img { max-width: 100%; }
+}
+
+// Agent listing
+
+.agent { margin-bottom: 60px; position: relative; padding-left: 180px;
+  .agent-image { @include shadow; @include transition(.2s); left: 0; position: absolute; top: 0; width: 160px;
+    &:hover { top: -5px; }
+    img { width: 100%; }
+  }
+  .wrapper {
+    h2 { border: none; margin-bottom: 10px; margin-top: 0; padding-bottom: 0; }
+    aside { @include opacity(.6); }
+    dl { border-top: 1px solid $color-grey-light; margin-top: 10px; padding-top: 10px; font-size: 12px;
+      dd { margin-bottom: 4px; }
+    }
+  }
+}
+
+// Agent detail
+
+#agent-detail {
+  h3 { margin-bottom: 20px; margin-top: 0; }
+  .property {
+    h3  { margin: 5px 0 3px 0; }
+  }
+  .agent-image {
+    img { width: 100%; }
+  }
+  .agent-social {
+    .btn { width: 36px; }
+  }
+  .agency-logo { display: block; position: relative;
+    &:after { @include opacity(0); @include transition(.2s); @include font-awesome; content: "\f105"; color: $color-default; font-size: 18px; position: absolute; top: 0; bottom: 0; margin: auto; width: 15px; height: 20px; right: 20px; }
+    &:hover {
+      &:after { @include opacity(1); right: 5px; }
+    }
+    img { max-width: 100%; }
+  }
+}
+
+// Agent form
+
+.agent-form {
+  .agent-info { padding-left: 140px; position: relative;
+    h3 { margin-top: 0; }
+    hr { margin: 10px 0; }
+    figure { left: 0; position: absolute; top: 0;
+      img { width: 120px; }
+    }
+  }
+}
+
+/*
+#agent-info {
+  dl {
+    dd { text-align: left; margin-left: 80px; }
+  }
+}
+*/
+
+// Animate loading
+
+.animate-loading { @include animation-name(animate-loading); @include animation-duration(infinite); @include keyframes(animate-loading); }
+@include keyframes(animate-loading) {
+  0% {
+    @include rotate(0deg);
+  }
+  100% {
+    @include rotate(360deg);
+  }
+}
+
+/****
+  B
+****/
+
+// Banner
+
+.banner { @include transition(.4s); border: 2px solid $color-grey-light; display: table; width: 100%; height: 100%; padding: 30px; margin-bottom: 30px;
+  &:hover {  border-color: darken($color-grey-light, 10%); }
+  .title, .submit { display: table-cell; vertical-align: middle; }
+  .title { color: $color-grey-dark; font-size: 24px; font-weight: lighter; width: 70%; }
+  .submit { color: $color-default; font-size: 18px; text-align: right; width: 30%;
+    i { color: $color-default-darker; margin-left: 10px; }
+  }
+}
+
+// Breadcrumb
+
+.breadcrumb { @include opacity(.6); background-color: transparent; padding: 8px 0; font-size: 12px; margin-bottom: 10px;
+  a { color: $color-grey-medium; }
+}
+
+// Block
+
+.block { padding: 25px 0; }
+
+// Blog
+
+.blog-post { border-bottom: 1px solid $color-grey-light; margin-bottom: 60px; padding-bottom: 30px;
+  iframe { margin-bottom: 20px; }
+  img { max-width: 100%; }
+  header {
+    h2 { border: none; font-size: 36px; margin: 20px 0; padding-bottom: 0; }
+  }
+  p { margin-bottom: 20px; }
+  ul { padding-left: 25px; }
+  .meta { display: table; width: 100%; margin: 20px 0;
+    .link-icon {
+      &:first-child {
+        .fa { margin-left: 0; }
+      }
+    }
+    .tags { display: inline-block; float: right;
+      .tag { margin-left: 5px; }
+    }
+  }
+}
+
+// Bookmark icon
+
+.bookmark { position: relative;
+  &:before { @include transition(.4s); @include font-awesome; content: "\f08a"; color: $color-default; font-size: 18px; position: relative; }
+  &:hover {
+    &:before { color: $color-default-darker; }
+    .title-add { visibility: visible; @include opacity(1); right: 30px; }
+  }
+  .title-add, .title-added { @include transition(.4s); @include opacity(0); visibility: hidden; color: $color-grey-medium; font-size: 12px; pointer-events: none; position: absolute; top: 0px; right: 25px; text-align: right; width: 140px; }
+}
+.bookmark-added { position: relative;
+  &:before { content: "\f004"; }
+  &:after { @include font-awesome; @include opacity(0); animation: animate-bookmark 1s; -webkit-animation: animate-bookmark 1s; content: "\f055"; color: $color-default; left: 3px; font-size: 14px; position: absolute; z-index: 2; }
+  .title-add { -webkit-opacity: 0 !important; opacity: 0 !important; }
+  .title-added { @include opacity(1); visibility: visible; }
+}
+
+.animate-bookmark { @include animation-name(animate-bookmark); @include animation-duration(1s); @include keyframes(animate-bookmark); }
+@include keyframes(animate-bookmark) {
+  0% {
+    @include opacity(0);
+    top: 0px;
+  }
+  30% {
+    top: -20px;
+    @include opacity(1);
+  }
+  100% {
+    top: -20px;
+    @include opacity(0);
+  }
+}
+
+/****
+  C
+****/
+
+// Cite
+
+.cite { color: rgba(0,0,0,.5); font-family: "Georgia", serif; font-size: 18px; font-style: italic; margin: 10px 0; }
+
+// Comments
+
+.comments { list-style: none; padding-left: 0;
+  .comment { display: table; margin-bottom: 20px; padding-left: 80px; position: relative;
+    figure { left: 0; position: absolute; top: 0;
+      .image { background-color: $color-grey-medium; height: 70px; position: relative; overflow: hidden; width: 60px;
+        &:after { bottom: 0px; content: ""; height: 0px; border-style: solid; border-width: 10px 0 0 10px; border-color: transparent transparent transparent #fff; position: absolute; right: 0; width: 0px; }
+        &:before { background-color: #fff; bottom: 0; content: ""; height: 10px; left: 0; width: calc(100% - 10px); position: absolute; }
+        img { height: 100%; }
+      }
+    }
+    .date { font-size: 12px; position: absolute; right: 0; top: 5px;
+      .fa { color: #b8b8b8; font-size: 10px; margin-right: 10px; }
+    }
+    .name { display: table; font-size: 18px; width: 100%; }
+    .reply { color: $color-grey-dark;
+      .fa { color: $color-default; margin-right: 10px; }
+    }
+  }
+}
+
+/****
+  D
+****/
+
+// Display Lines
+
+.display-lines {
+  .property { border-bottom: 2px solid $color-grey-light; padding-left: 280px; padding-bottom: 30px; position: relative; overflow: visible;
+    &.no-border { padding-bottom: 0; }
+    &:hover {
+      img { top: inherit; }
+    }
+    .property-image { height: 195px; left: 0; position: absolute; top: 0; overflow: hidden; width: 260px; }
+    .type { top: 0; right: 0; }
+    .info { display: table; position: relative;
+      header {
+        a { display: inline-block; }
+        figure { margin-bottom: 10px; }
+        h3 { color: $color-default-darker; font-size: 28px; margin: 0; }
+      }
+      aside { margin-top: 10px;
+        p { float: left; max-height: 55px; font-size: 12px; width: 60%; overflow: hidden; padding-right: 10px; padding-bottom: 20px; }
+        dl { float: right; width: 40%; font-size: 12px;
+          dd { margin-bottom: 4px; }
+        }
+      }
+      .link-arrow { bottom: 0; left: 0; position: absolute; }
+    }
+    .ribbon { margin: inherit; left: initial;  }
+  }
+}
+
+/****
+  E
+****/
+
+// Enable agency select box
+
+.enabled { @include transition(.4s); @include opacity(1); pointer-events: inherit; }
+.disabled { @include transition(.4s); @include opacity(.2); pointer-events: none; }
+
+// Error Pages
+
+.error-page { display: table; text-align: center; margin-top: 100px; width: 100%;
+  h2 { position: relative; z-index: 4; }
+  .title {
+    header { color: $color-default; font-size: 99px; font-weight: lighter; position: relative; z-index: 1; }
+  }
+  .top { bottom: 40px; left: 0; margin: auto; position: absolute; right: 0; z-index: 2; }
+  .bottom { bottom: 90px; left: 0; margin: auto; position: absolute; right: 0; z-index: 0; }
+}
+
+/****
+  F
+****/
+
+// FAQ
+
+.faq { position: relative; padding-left: 50px; margin-bottom: 50px;
+  .icon { background-color: $color-default; color: #fff; height: 35px; left: 0; width: 35px; position: absolute; top: 0; text-align: center; line-height: 35px;
+    &:after { bottom: -7px; content: ""; height: 0px; border-style: solid; border-width: 0px 10px 10px 10px; border-color: transparent $color-default transparent transparent; position: absolute; right: 0; width: 0px; }
+  }
+  header { color: $color-default-darker; font-size: 18px; margin-top: 6px; margin-bottom: 15px; }
+  p { border-bottom: 2px solid $color-grey-light; margin-bottom: 15px; padding-bottom: 15px; }
+  aside { font-size: 12px;
+    a { margin-left: 10px; }
+  }
+}
+
+// Feature box
+
+.feature-box { border: 2px solid $color-grey-light; margin-bottom: 30px; padding: 0 20px 15px 80px; position: relative;
+  .description {
+    h3 { border-bottom: 1px solid rgba(0,0,0,.1); color: $color-default-darker; font-weight: normal; padding-bottom: 10px; }
+  }
+  .icon { background-color: $color-default; height: 60px; left: -2px; padding: 20px; position: absolute; top: -2px; width: 60px;
+    &:after { bottom: -8px; content: ""; height: 0px; border-style: solid; border-width: 0 8px 8px 0; border-color: transparent $color-default transparent transparent; position: absolute; right: 0; width: 0px;  }
+    .fa { color: #fff; font-size: 20px; }
+  }
+}
+
+// Featured properties block
+
+.featured-properties { padding-bottom: 0; padding-top: 40px; }
+
+// Featured Property Carousel
+
+#featured-properties-carousel { background-color: #fff; }
+
+// Fun Facts
+
+.fun-facts { display: table; margin-bottom: 15px; padding: 30px 0; position: relative; width: 100%;
+  &:before { background-color: rgba(0,0,0,.07); bottom: 0; content: ""; height: 2px; left: 0; margin: auto; position: absolute; top: -15px; right: 0; width: 100%; z-index: -2; }
+  .number-wrapper { text-align: center;
+    figure { color: $color-default-darker; }
+    .number { color: $color-default; font-size: 48px; font-weight: lighter; position: relative;
+      &:before { background-color: #fff; bottom: 0; content: ""; padding: 20px; position: absolute; top: 0; left: 0; right: 0; margin: auto; width: 60%; z-index: -1; }
+    }
+  }
+}
+
+/****
+  I
+****/
+
+.invoice { width: 100%;
+  aside { display: inline-block; width: 49%; }
+  address { line-height: 24px; margin: 20px 0;}
+  table { width: 100%; }
+  section { border-bottom: 2px solid #ccc; padding: 20px 0; }
+  dl {
+    dd { text-align: left; }
+    dt { width: 150px; }
+  }
+  h1 { border: none; font-size: 60px; font-weight: lighter; margin: 0; padding: 0; }
+  h2 { border: none; margin: 0; padding: 0; font-weight: bold; font-size: 24px; margin-bottom: 20px; }
+  h3 { border: none; margin: 0; padding: 0; font-weight: bold; font-size: 24px; }
+  h4 { font-weight: bold; }
+  .title { font-weight: bold; }
+  #description-table {
+    th { background-color: #e8e8e8; padding: 8px 0;
+      &:first-child { padding-left: 10px; width: 50%; }
+      &:last-child { text-align: right; padding-right: 10px; width: 18%; }
+    }
+    td { padding: 10px 0;
+      &:first-child { padding-left: 10px; }
+      &:last-child { text-align: right; padding-right: 10px; }
+    }
+  }
+  #description { padding-bottom: 0; }
+  #subtotal {
+    aside {
+      &:last-child { width: 18%; }
+    }
+  }
+  #summary { text-align: right;
+    h2 { display: inline-block; }
+    figure { display: inline-block; font-size: 24px; width: 18%; }
+  }
+  #from-to {
+    > table > tbody > tr > td { width: 50%; vertical-align: top;
+    }
+  }
+  #underline { font-size: 12px; }
+}
+
+/****
+  L
+****/
+
+.language-bar { float: right; margin-left: 15px;
+  a { @include opacity(.4); @include transition(.4s); margin-left: 5px !important;
+    &.active { @include opacity(1); }
+    &:hover { @include opacity(1);}
+  }
+}
+
+.layout-expandable { @include transition(.8s); overflow: hidden; }
+
+// Loading
+
+#loading-icon { bottom: 0; font-size: 28px; height: 25px; left: 0; margin: auto; position: absolute; right: 0; top: 0; width: 25px; z-index: 3; }
+
+.loading {
+  &:before { background-color: #fff; content: ""; height: 100%; left: 0; width: 100%; position: absolute; top: 0; z-index: 2; }
+}
+
+// Logos
+
+.logos { display: block; line-height: 0; margin-top: 10px; padding: 30px 10px; text-align: justify;
+  &:after { content: ''; display: inline-block; width: 100%;}
+  .logo { display: inline-block; margin-bottom: 7px; position: relative;
+    a { @include transition(.3s); @include opacity(.8); padding: 10px;
+      &:hover { @include opacity(1); }
+    }
+  }
+}
+
+
+/****
+  N
+****/
+
+// Note
+
+.note { @include opacity(.7); font-size: 12px; margin: 10px 0; }
+
+/****
+  M
+****/
+
+.masonry-hide-other { @include opacity(.8); }
+.masonry-show { @include opacity(1); }
+
+// Member
+
+.member { position: relative; margin-bottom: 30px; padding-left: 130px;
+  h3 { color: $color-default-darker; font-size: 18px; font-weight: bold; margin-bottom: 5px; margin-top: 0; }
+  .image { left: 0; position: absolute; top: 0;
+    img { width: 110px; }
+  }
+  dl {  border-top: 2px solid $color-grey-light; font-size: 12px; margin-top: 10px; padding-top: 10px;
+    dd { margin-bottom: 4px; }
+  }
+  .tag { background-color: $color-default; color: #fff; font-size: 12px; font-weight: bold; position: absolute; right: 0; top: 0; }
+}
+
+// My Properties
+
+.my-properties {
+  table { width: 100%;
+    h2 { border: none; font-size: 18px; font-weight: bold; margin: 0 0 5px 0; padding: 0; }
+    thead { @include shadow;
+      tr {
+        th { background-color: $color-default-darker; border: none; color: #fff; padding: 10px 10px 10px 0px;
+          &:first-child { padding-left: 10px; }
+        }
+      }
+    }
+    tbody {
+      tr {
+        td { border-top: none; border-bottom: 2px solid $color-grey-light; padding: 20px 20px 20px 0px; vertical-align: middle;
+          &:last-child { padding-right: 5px; }
+          &.actions { text-align: right;
+            a { padding: 5px; }
+            .edit { float: left; color: $color-grey-dark;
+              &:hover {
+                i { color: $color-default-darker; }
+              }
+              i { @include transition(.4s); color: $color-default; margin-right: 5px; }
+            }
+            .delete { color: red; position: relative; top: 5px; }
+          }
+          &.image { width: 125px;
+            img { width: 100%; }
+          }
+          img, .inner { display: inline-block;}
+          .inner {
+          figure { margin-bottom: 5px; }
+          }
+        }
+      }
+    }
+  }
+}
+
+/****
+  O
+****/
+
+.owl-carousel {
+  .property { margin-bottom: 0; }
+  .owl-pagination { text-align: center;
+    .owl-page { @include border-radius(50%); @include transition(.4s); background-color: rgba(0,0,0,.3); display: inline-block; height: 10px; margin-right: 5px; width: 10px;
+      &:hover { background-color: rgba(0,0,0,.5); }
+      &.active { background-color: rgba(0,0,0,.6); }
+    }
+  }
+  .owl-dots { text-align: center;
+    .owl-dot { @include border-radius(50%); @include transition(.4s); background-color: rgba(0,0,0,.3); display: inline-block; height: 10px; margin-right: 5px; width: 10px;
+      &:hover { background-color: rgba(0,0,0,.5); }
+      &.active { background-color: rgba(0,0,0,.6); }
+    }
+  }
+}
+
+/****
+  P
+****/
+
+// Page Content
+
+#page-content { padding-bottom: 10px; position: relative; }
+
+// Pagination
+
+.pagination {
+  li {
+    &:first-child, &:last-child {
+      a { @include border-radius(0px); }
+    }
+    &.active {
+      a { background-color: transparent; border-color: $color-default-darker; color: $color-default-darker;
+        &:hover, &:active, &:focus { background-color: transparent; border-color: $color-default-darker; color: $color-default-darker; }
+      }
+    }
+    a { @include border-radius(0px); background-color: transparent; border: none; border-top: 5px solid $color-grey-light; color: $color-grey-medium; padding: 10px 20px;
+      &:hover, &:active, &:focus { background-color: transparent; border-color: $color-default; color: $color-default; }
+    }
+  }
+}
+
+// Post Author
+
+.post-author { border: 2px solid $color-grey-light; display: table; margin-bottom: 60px; padding: 20px; position: relative; width: 100%;
+  img { display: table-cell; vertical-align: middle; width: 100px; /*position: absolute; height: 100px; top: 0; bottom: 0; margin: auto;*/ }
+  header { color: $color-default-darker; margin-bottom: 10px; }
+  .wrapper { display: table-cell; vertical-align: middle; padding-left: 20px; }
+}
+
+// Pricing
+
+.price-box { @include transition(.4s); border: 2px solid $color-grey-light; text-align: center; padding-bottom: 20px; margin-bottom: 30px; position: relative; bottom: 0;
+  &:hover { bottom: 10px; }
+  &.promoted { background-color: darken($color-default-darker, 3%); border: none;
+    header, .price { margin: 0; }
+    ul { color: #fff;
+      li { border-bottom-color: rgba(255,255,255,.2); }
+    }
+  }
+  header {  background-color: $color-default; margin: -2px; padding: 20px 0;
+    h2 { border: none; color: #fff; font-size: 36px; font-weight: lighter; margin: 0; padding: 0; }
+  }
+  .price { @include shadow; background-color: $color-default-darker; color: #fff; margin: 0 -2px; padding: 10px 0;
+    figure { font-size: 18px; font-weight: bold; margin-bottom: -5px; }
+    small { font-size: 12px; }
+  }
+  ul { list-style: none; padding-left: 0; padding-bottom: 10px;
+    li { border-bottom: 2px solid $color-grey-light; padding: 10px 0;
+      &.not-available { @include opacity(.8); text-decoration: line-through; }
+      span { font-weight: bold; }
+    }
+  }
+}
+
+// Property
+
+.property { margin-bottom: 30px; overflow: hidden; position: relative; width: 100%;
+  &:hover, &:active, &:focus {
+    img { -moz-backface-visibility: hidden; top: -10px; }
+    &.big {
+      .overlay {  bottom: 0px; }
+    }
+    .overlay { bottom: 0px;
+      .additional-info {
+        li { @include opacity(1); }
+      }
+    }
+    .tag {
+      &.status { background-color: rgba(0,0,0,.8); }
+    }
+    .type { @include opacity(1); }
+  }
+  img { @include transition(.4s); -moz-backface-visibility: hidden; width: 100%; position: relative; top: 0; }
+  .overlay { @include transition(.4s); bottom: -50px; left: 0; position: absolute; width: 100%; z-index: 1;
+    h3 { @include text-shadow(0px 1px 1px rgba(0,0,0,.3)); color: #fff; font-size: 16px; font-weight: bold; margin: 5px 0 3px 0; }
+    figure { color: #fff; font-weight: lighter;  }
+    .additional-info { background-color: $color-default-darker; display: table; height: 30px; list-style: none; margin-bottom: 0; width: 100%; padding: 8px 12px;
+      li { @include transition(.8s); @include opacity(0); color: #fff; display: table-cell; width: 25%;
+        header { @include opacity(.5); font-size: 11px; }
+        figure { font-size: 11px; font-weight: bold; }
+      }
+    }
+    .info { @include property-gradient; padding: 12px; }
+  }
+  .property-image { /*height: 195px;*/ overflow: hidden; width: 100%; }
+  .tag {
+    &.status { @include transition(.4s); @include border-radius(0px); background-color: rgba(0,0,0,.6); color: #fff; left: 13px; font-size: 12px; padding: 6px 9px; position: absolute; top: 15px; z-index: 1;
+      &:after { bottom: -4px; width: 0; height: 0; border-style: solid; border-width: 4px 4px 0 0; border-color: rgba(0,0,0,.6) transparent transparent transparent; content: ""; left: 0; position: absolute; }
+    }
+  }
+  .type { @include transition(.4s); @include shadow; @include opacity(.9); background-color: #fff; position: absolute; right: 13px; z-index: 2; top: 15px; height: 29px; padding: 0 2px; text-align: center; line-height: 29px;
+    img { width: inherit; top: 0 !important; }
+  }
+  &.big { max-width: 440px;
+    .overlay { bottom: -70px;
+      h3 { font-size: 24px; font-weight: normal; margin: 8px 0 3px 0; }
+      li {
+        header, figure { font-size: 14px; }
+      }
+      .additional-info { height: 70px; padding: 15px 20px;
+      }
+      .price { font-size: 18px; }
+      .info { padding: 20px; }
+    }
+    .property-image { /*height: 285px;*/ }
+    .tag { left: 20px; top: 20px; }
+  }
+  &.small { margin-bottom: 30px !important;
+    &:hover {
+      img { top: inherit; }
+    }
+    .property-image { float: left; width: 100px; height: 75px; }
+    .info { padding-left: 110px;
+      a { color: $color-grey-dark;
+        &:hover { color: $color-default; }
+        h4 { border: none; font-size: 14px; font-weight: bold; margin-bottom: 0; margin-top: 0; }
+      }
+      figure { margin-bottom: 10px; }
+      .tag { font-size: 12px; }
+    }
+  }
+  &.masonry { @include transition(.4s); background-color: #fff; font-size: 12px; width: 32.1%; float: left; margin-bottom: 15px; overflow: visible;
+    .inner { /*-moz-backface-visibility: hidden;*/ @include transform3d(scale(1));  }
+    &:hover {
+      img { top: 0; }
+    }
+    aside { border: 2px solid $color-grey-light; background-color: #fff; padding: 15px 15px 10px 15px; position: relative; top: -2px;
+      h3 { -moz-backface-visibility: hidden; color: $color-default-darker; font-weight: bold; margin-top: 0; margin-bottom: 5px; }
+      figure { -moz-backface-visibility: hidden; margin-bottom: 10px }
+      p { -moz-backface-visibility: hidden; margin-bottom: 10px; }
+      .link-arrow { border-top: 2px solid $color-grey-light; display: block; font-size: 14px; padding-top: 10px; }
+
+    }
+    .property-image {  position: relative; margin-bottom: 0;
+      img { @include transition(.6s); @include backface-visibility(hidden); }
+      &:hover {
+        img { @include transform3d(scale(1.1) rotate(.01deg));  }
+        .type {
+          img { @include transform3d(scale(1) rotate(.0deg)); }
+        }
+      }
+      .overlay { bottom: 0; position: absolute;
+        .tag { -moz-backface-visibility: hidden; }
+      }
+      .ribbon { top: 15px; bottom: inherit; }
+    }
+  }
+}
+
+// Property Carousel
+
+.property-carousel {
+  .property-slide { position: relative;
+    .overlay { @include property-gradient; bottom: 0; left: 0; height: 40%; position: absolute; width: 100%;
+      h3 { bottom: 20px; color: #fff; left: 30px; font-size: 24px; position: absolute; }
+    }
+    img { width: 100%; }
+  }
+  .owl-controls { position: absolute; right: 0; top: 0;
+    .owl-prev, .owl-next { @include opacity(.7); @include transition(.4s); background-color: $color-default; display: inline-block !important; width: 50px; height: 50px; position: relative; z-index: 3 !important;
+      &:after { @include font-awesome; color: #fff; width: 5px; height: 15px; position: absolute; top: 0; left: 0; bottom: 0; right: 0; margin: auto; }
+    }
+    .owl-next {
+      &:hover { @include opacity(1); }
+      &:after { content: "\f105";  }
+    }
+    .owl-prev {
+      &:hover { @include opacity(1); }
+      &:after { content: "\f104";  }
+    }
+  }
+}
+
+#property-detail {
+  section { margin-bottom: 25px;
+    h2 { margin-bottom: 25px; }
+  }
+}
+
+.property-detail-map-wrapper { position: relative; height: 340px;
+    .property-detail-map { height: 100%; position: absolute; right: 0; width: 100%;  }
+}
+
+.property-features-list {
+  li { display: inline-block; padding: 5px 0; width: 49%;
+    &:before { @include font-awesome; content: "\f111"; color: $color-default; font-size: 8px; position: relative; bottom: 2px; margin-right: 10px; }
+  }
+}
+
+.property-title { margin-bottom: 30px; position: relative;
+  h1 { border: none; margin-bottom: 5px; margin-top: 0;  padding-bottom: 0;}
+  .actions { top: 0; bottom: 0; margin: auto; height: 20px; position: absolute; right: 0;
+    a { margin-left: 5px; }
+  }
+}
+
+#property-rating {
+  aside, figure { display: inline-block;
+    header { font-weight: bold; margin-bottom: 10px; }
+  }
+  aside { float: left; }
+  figure { float: right;
+    .rating { width: inherit !important; float: right; }
+  }
+  .rating-form { @include transition(.4s); height: 0px; overflow: hidden;
+    header { font-size: 18px; font-weight: lighter; margin: 20px 0; }
+  }
+}
+.show-rating-form { height: auto; }
+
+/****
+  R
+****/
+
+// Rating
+
+.rating {
+  img { background-color: $color-default; }
+  .inner {
+    img { background-color: $color-default; }
+  }
+  &.rating-individual { margin-bottom: 10px; }
+  &.rating-overall { }
+  &.rating-user { display: inline-block;
+    #hint { margin-top: 20px; height: 20px; }
+  }
+}
+
+// Ribbon
+.ribbon { @include shadow; @include transform(translate3d(0,0,1px) rotate(45deg)); @include backface-visibility(hidden); background-color: $color-default; color: #fff; font-weight: bold; font-size: 12px; padding: 6px; position: absolute; z-index: 3; right: -30px; top: 15px; width: 120px; text-align: center; margin: auto; height: 30px; bottom: inherit; left: inherit; }
+
+/****
+  S
+****/
+
+// Search filter
+
+#search-filter { margin-bottom: 40px; padding-top: 10px; position: relative;
+  h3 { display: inline-block; margin: 0 10px 0 0;
+    i { color: $color-default; font-size: 12px; margin-right: 5px; position: relative; top: -2px; }
+  }
+  .search-count { font-weight: bold; }
+  .sorting { position: absolute; right: 0; top: 0px;
+    span, .form-group { display: inline-block; }
+    span { margin-right: 10px; }
+    .form-group { min-width: 200px; }
+  }
+}
+
+// Section title
+
+.section-title { position: relative;
+  .link-arrow { margin-top: 5px; right: 0; position: absolute; top: 0;
+
+  }
+}
+
+// Show on map button
+
+.show-on-map { color: $color-grey-dark; position: absolute; right: 0px; text-align: center;
+  .fa { color: $color-default; font-size: 24px; }
+}
+
+// Sidebar
+
+#sidebar {
+  aside { margin-bottom: 50px; }
+  h3 { border-bottom: 1px solid rgba(0,0,0,.1); margin-bottom: 30px; margin-top: 21px; padding-bottom: 15px; }
+  form {
+    .btn { width: 100%; }
+  }
+  ul { padding-left: 15px;
+    &.list-links {
+      li { color: $color-default; }
+    }
+  }
+  .sidebar-navigation { list-style: none; padding-left: 0;
+    li {
+      &.active {
+        a { @include shadow; background-color: $color-grey-light; border-color: $color-default-darker; padding-left: 10px;
+          &:after { @include opacity(1); border-color: transparent transparent transparent $color-default-darker; }
+          &:hover { padding-left: 10px; }
+        }
+        i { display: inline-block; }
+      }
+    }
+    > li { @include transition(.4s); margin-bottom: 5px; position: relative;
+      a { border-right: 3px solid transparent; color: $color-grey-dark; display: block; padding: 10px 0 10px 10px; position: relative;
+        &:after { @include transition(.4s); width: 0; height: 0; border-style: solid; border-width: 4px 0 4px 5px; border-color: transparent transparent transparent transparent; content: ""; position: absolute; right: -8px; top: 1px; bottom: 0; margin: auto; }
+        &:hover { border-color: $color-default; padding-left: 15px;
+          &:after { @include opacity(1); border-color: transparent transparent transparent $color-default; }
+        }
+      }
+      i { color: $color-default; margin-right: 8px; }
+
+      ul { padding-left: 30px; list-style: none;
+        > li { border-bottom: 1px solid $color-grey-light; position: relative;
+          &:before { content: "•"; color: $color-default; font-size: 24px; position: absolute; left: -5px; top: 2px; }
+          ul { padding-left: 10px;
+            li { @include opacity(.6); border-bottom: none;
+              &:before { display: none; }
+            }
+          }
+        }
+      }
+
+    }
+  }
+}
+
+// Slider
+
+#slider { height: 650px; position: relative; overflow: hidden;
+  .homepage-slider {
+    .slide { height: 750px; position: relative; overflow: hidden;
+      &:after  { @include opacity(.8); @include property-gradient; bottom: 0; content: ""; height: 30%; left: 0; position: absolute; width: 100%; z-index: 1; }
+      .overlay { @include opacity(1); @include transition(.2s); color: #fff; position: absolute; bottom: 0; margin-bottom: 20px; width: 100%; z-index: 2;
+        .info { @include opacity(1); @include transition(.2s);
+          .tag { @include opacity(0); @include transition(.4s); font-size: 24px; position: relative; top: 20px;  }
+          h3 { @include text-shadow(0px 1px 2px rgba(0,0,0,.6)); @include opacity(0); @include transition(.4s); font-size: 30px; font-weight: normal; margin: 5px 0; position: relative; left: 20px;  }
+          figure { @include text-shadow(0px 1px 1px rgba(0,0,0,.6)); @include opacity(0); @include transition(.4s); font-size: 18px; position: relative; left: 20px; }
+          &.animate-description-out { @include opacity(0);
+            .tag, h3, figure { @include opacity(0); }
+          }
+          &.animate-description-in { @include opacity(1);
+            figure { @include opacity(1); @include transition-delay(.3s); left: 0px; }
+            h3 { @include opacity(1); @include transition-delay(.2s); left: 0px; }
+            .tag { @include opacity(1); top: 0px; }
+
+          }
+        }
+        hr { @include opacity(.2); border-color: #fff; }
+        .link-arrow { color: #fff; }
+      }
+      img { position: relative; }
+
+    }
+    .owl-controls {
+      .owl-prev, .owl-next { @include transition(.4s); background-color: transparent; bottom: 0; display: block; height: 100%; margin: auto; padding: 0 30px; position: absolute; top: 0;
+        &:hover { background-color: rgba(0,0,0,.2); }
+        &:after { @include font-awesome; bottom: 0; color: #fff; font-size: 40px; height: 40px; margin: auto; top: 0px; position: absolute; }
+      }
+      .owl-next { right: 0;
+        &:after { content: "\f105";  right: 20px; }
+      }
+      .owl-prev {
+        &:after { content: "\f104"; left: 20px; }
+      }
+    }
+  }
+}
+
+// Show All button
+
+.show-all { color: $color-grey-dark; padding: 10px; display: inline-block;
+  &:hover { cursor: pointer; }
+  &:after { @include font-awesome; color: $color-default; content: "\f067"; margin-left: 10px; font-size: 11px; position: relative; top: -1px; }
+  &.layout-expanded {
+    &:after { content: "\f068"; }
+  }
+}
+
+// Submit pricing table
+
+.submit-pricing { border: 2px solid $color-grey-light; padding: 15px 20px; margin-bottom: 30px;
+  table { margin-bottom: 0;
+    thead {
+      tr {
+        th { border: none; font-weight: lighter; font-size: 18px; padding: 0; width: 25%; vertical-align: middle;
+          &.title { color: $color-default; font-size: 24px; text-align: center; }
+        }
+      }
+    }
+    tbody {
+      tr {
+        td { border: none; border-top: 2px solid $color-grey-light; font-size: 12px; width: 25%; vertical-align: middle; padding: 10px 0; text-align: center;
+          &:first-child { @include opacity(.6); text-align: left; }
+          &.not-available { @include opacity(.4); }
+          &.available { color: $color-default; }
+        }
+        &.buttons { padding-bottom: 0;
+          td { border: none;
+            &:after { @include font-awesome; color: $color-grey-medium; content: "\f05d"; display: none;  font-size: 20px; }
+            &.package-selected {
+              &:after { display: inline-block; }
+              .btn { display: none; }
+            }
+          }
+        }
+        &.prices {
+          td { border: none; color: $color-default-darker; font-size: 14px; padding-bottom: 15px; }
+        }
+      }
+    }
+  }
+}
+
+.submit-step { padding-left: 50px; padding-top: 10px; position: relative;
+  .step-number { background-color: $color-default; color: #fff; height: 35px; left: 0; width: 35px; position: absolute; top: 0; text-align: center; line-height: 35px;
+    &:after { bottom: -7px; content: ""; height: 0px; border-style: solid; border-width: 0px 10px 10px 10px; border-color: transparent transparent transparent $color-default; position: absolute; left: 0; width: 0px; }
+  }
+  .description {
+    h4 { color: $color-grey-dark; margin-top: 0; font-weight: bold; }
+  }
+}
+
+.submit-features { list-style: none; padding-left: 0;
+  li { display: inline-block; width: 33%;
+    label { font-weight: normal;  }
+  }
+}
+
+#submit-map { height: 320px; width: 100%; }
+
+.submission-message { margin-top: 100px;
+  header { color: $color-default-darker; font-size: 48px; font-weight: lighter; margin: 10px 0; }
+  p, a { margin-bottom: 60px; }
+}
+
+/****
+  T
+****/
+
+// Tag
+
+.tag { @include border-radius(2px); @include box-shadow(0px 1px 2px rgba(0,0,0,.3)); background-color: #fff; display: inline-block; padding: 3px 8px;
+  &.price { @include text-shadow(0px 1px 1px rgba(0,0,0,.3)); background-color: $color-default; color: #fff; font-size: 14px; font-weight: bold; }
+  &.article { background-color: $color-grey-light; border-left: 3px solid #c7c7c7; color: $color-grey-dark; font-size: 12px; font-weight: bold; }
+}
+
+// Testimonial carousel small
+
+.testimonials-carousel {
+  &.small {
+    .testimonial { padding: 20px 0;
+      figure {
+        .image { background-color: $color-grey-medium; height: 70px; position: relative; overflow: hidden; width: 60px;
+          &:after { bottom: 0px; content: ""; height: 0px; border-style: solid; border-width: 10px 0 0 10px; border-color: transparent transparent transparent #fff; position: absolute; right: 0; width: 0px; }
+          &:before { background-color: #fff; bottom: 0; content: ""; height: 10px; left: 0; width: calc(100% - 10px); position: absolute; }
+          img { height: 100%; }
+        }
+      }
+      .cite {
+        p { font-size: 14px; }
+      }
+    }
+  }
+  .testimonial {
+    img { height: 100%; width: initial !important; }
+  }
+}
+
+// Text banner
+
+.text-banner { padding: 40px 0; }
+
+// Timeline
+
+//.timeline {
+//  .timeline-item {
+//    &:first-child {
+//      &:before { background-color: red !important; }
+//    }
+//  }
+//}
+
+.timeline-item { display: block; margin-bottom: 60px;
+  &:last-child {
+    &:after { display: none !important; }
+  }
+  &:hover {
+    .circle {
+      .date { left: 30px; }
+    }
+    .wrapper { background-color: $color-grey-light;
+      .social {
+        .btn { @include opacity(1); }
+      }
+    }
+  }
+  &:after { background-color: $color-grey-light; content: ""; width: 2px; height: 100%; position: absolute; top: 0; left: 21px; z-index: -1; }
+  .circle { @include border-radius(50%); background-color: #fff; border: 2px solid $color-grey-light; height: 43px; position: relative; width: 100%;
+    .dot { @include border-radius(50%); @include transition(.4s); background-color: $color-default;height: 7px; width: 7px; position: absolute; top: 0; right: 0; bottom: 0; left: 1px; margin: auto; }
+    .date { @include shadow; @include transition(.4s); background-color: $color-default; color: #fff; left: 40px; position: absolute; top: 0; bottom: 0; margin: auto; height: 29px; line-height: 29px; padding-left: 7px; padding-right: 7px; z-index: 2;
+      &:after { width: 0; height: 0; content: ""; border-style: solid; border-width: 4px 4px 4px 4px; border-color: transparent $color-default transparent transparent ; position: absolute; top: 0; left: -8px; bottom: 0; margin: auto; }
+    }
+  }
+  .wrapper { @include transition(.4s); background-color: transparent; border: 2px solid $color-grey-light; padding: 20px 20px 20px 80px; margin-top: -8px;
+    img { margin-bottom: 30px; width: 100%; }
+    h3 { margin-top: 0; }
+    .social { margin-top: 20px;
+      .btn { @include opacity(.3); padding: 3px 0; width: 25px;
+      }
+    }
+  }
+}
+
+// Thumbnail
+
+.thumbnail { height: 100px; }
+
+// Tooltip
+
+.tool-tip { padding: 5px; cursor: pointer; color: $color-default-darker; }
+
+/****
+  U
+****/
+
+.universal-button { @include box-shadow(0px 1px 1px rgba(0,0,0,.2)); background-color: $color-grey-light; color: $color-grey-dark; display: block; margin-bottom: 10px; padding: 20px; position: relative; top: 0;
+  &:hover { background-color: darken($color-grey-light, 2%); color: $color-grey-dark; }
+  &:active { @include box-shadow(0px 1px 0px rgba(0,0,0,.2)); top: 1px; }
+  figure, span { vertical-align: middle; display: table-cell; }
+  figure { color: $color-default; font-size: 28px; width: 40px; }
+  .arrow { bottom: 0; color: $color-default; height: 15px; margin: auto; position: absolute; right: 10px; top: 0; width: 10px; }
+}

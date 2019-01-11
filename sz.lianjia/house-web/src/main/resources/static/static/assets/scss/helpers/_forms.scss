@@ -1,0 +1,285 @@
+.form-group { margin-bottom: 10px; }
+
+input[type="text"],input[type="email"], input[type="search"], input[type="password"], input[type="number"], input[type="tel"], textarea.form-control { @include box-shadow(none); @include border-radius(0px); @include transition(.3s); @include box-shadow(0px 1px 1px rgba(0,0,0,.2) inset); -webkit-appearance: none; background-color: $color-grey-light; border: none; font-size: 14px; outline: none !important; padding: 10px 9px 11px 9px; width: 100%; height: inherit;
+  &:active, &:focus { @include box-shadow(inset 0px 1px 1px rgba(0,0,0,.2)); }
+  &:hover { background-color: rgba(0,0,0,.02); }
+}
+
+.btn, select { @include box-shadow(none); @include border-radius(0px); @include transition(.3s); @include box-shadow(0px 1px 1px rgba(0,0,0,.2)); background-color: $color-grey-light; border: none; color: $color-grey-medium; font-size: 14px; outline: none !important; padding: 10px 9px 9px 9px; width: auto;
+  &:hover { background-color: darken($color-grey-light, 3%); color: $color-grey-medium; }
+  &:active, &:focus { @include box-shadow(0px 1px 2px rgba(0,0,0,0), inset 0px 2px 2px rgba(0,0,0,.2)); background-color: darken($color-grey-light, 3%); color: $color-grey-medium;  }
+
+  &.btn-default { @include box-shadow(0px 1px 1px rgba(0,0,0,.2)); @include transition(.2s); background-color: $color-default; color: #fff;
+    &:hover { background-color: darken($color-default, 3%); }
+    &:active { @include box-shadow(0px 2px 2px rgba(0,0,0,0), inset 0px 2px 2px rgba(0,0,0,.2)); }
+  }
+  &.btn-grey-dark { background-color: $color-grey-dark; color: #fff;
+    &:hover { background-color: lighten($color-grey-dark, 6%); }
+  }
+  &.btn-danger { background-color: #C9302C; color: #fff;
+    &:hover { background-color: darken(#C9302C, 5%); }
+  }
+  &.btn-success { background-color: #5CB85C; color: #fff;
+    &:hover { background-color: darken(#5CB85C, 5%); }
+  }
+  &.btn-info { background-color: #31B0D5; color: #fff;
+    &:hover { background-color: darken(#31B0D5, 5%); }
+  }
+  &.btn-warning { background-color: #EC971F; color: #fff;
+    &:hover { background-color: darken(#EC971F, 5%); }
+  }
+
+  &.small { font-size: 12px; padding: 5px 12px 5px; }
+
+  &.large { font-size: 18px; padding: 15px 20px; }
+}
+
+// Checkboxes
+
+.checkbox, .radio { padding-left: 0px; }
+
+.checkbox {
+  &.switch { margin: 0; padding: 0; z-index: 2;
+    .icheckbox { @include border-radius(3px); @include box-shadow(none); @include transition(.3s); border: 2px solid #cdcdcd; background-color: #fff; display: inline-block; height: 25px; margin-left: 10px; position: relative; width: 45px; top: -1px;
+      &:hover { border-color: $color-default;
+        &:before { @include opacity(1); }
+      }
+      &:after { @include transition(.3s); @include opacity(0); @include font-awesome; color: $color-default-darker; content: "\f00c"; font-size: 11px; position: absolute; left: 5px; line-height: 20px; }
+      &:before { @include transition(.3s); @include border-radius(2px); background-color: $color-default; content: ""; height: 17px; width: 17px; position: absolute; left: 2px; top: 2px; }
+      &.checked { border-color: $color-default;
+        &:before { @include opacity(1); background-color: $color-default-darker; left: 22px; }
+      }
+    }
+  }
+  .icheckbox { @include box-shadow(inset 0px 1px 1px rgba(0,0,0,.2)); position: relative; display: inline-block; vertical-align: middle; background-color: $color-grey-light; display: inline-block; height: 20px; margin-right: 10px; position: relative; width: 20px; top: -1px;
+    &:after { @include transition(.3s); @include opacity(0); @include font-awesome; color: $color-grey-dark; content: "\f00c"; position: absolute;  line-height: 20px; left: 4px; }
+    &.checked {
+      &:after { @include opacity(1); }
+    }
+  }
+}
+
+.iradio { @include shadow-inner; @include border-radius(50%); position: relative; display: inline-block; vertical-align: middle; background-color: $color-grey-light; height: 20px; margin-right: 10px; position: relative; width: 20px; top: -1px;
+  &:after { @include transition(.3s); @include opacity(0); @include border-radius(50%); width: 8px; height: 8px; position: absolute; top: 0; right: 0; bottom: 0; left: 0; margin: auto; content: ""; background-color: $color-grey-dark; }
+  &.checked {
+    &:after { @include opacity(1); }
+  }
+}
+
+.input-group-addon { @include border-radius(0px); border: none; }
+
+.input-group {
+  .search { @include box-shadow(none); position: relative; width: 40px; z-index: 2; }
+}
+
+.form-group { position: relative; }
+
+form {
+  #form-status { line-height: 1; position: relative; top: -28px;
+    #valid { position: relative; top: -10px;
+      .icon { font-size: 24px; margin-right: 10px; vertical-align: middle; }
+    }
+    #invalid { color: red; position: relative; top: -10px; }
+  }
+  label.error { background-color: red; bottom: -30px; color: #fff;  font-size: 12px; left: 0;  padding: 5px; position: absolute; z-index: 2;
+    &:before { border-style: solid; border-width: 0 3.5px 5px 3.5px; border-color: transparent transparent red transparent; content: ""; height: 0px; left: 5px; position: absolute; top: -5px; width: 0px; }
+  }
+}
+
+.form-submit {
+  .file-input { border: 2px solid $color-grey-light; padding: 15px; position: relative; width: 100%;
+    .file-preview { @include border-radius(0px); border: none; padding: 0; margin-bottom: 20px;
+      .close { position: absolute; right: 10px; top: 5px; }
+      .file-preview-frame { @include box-shadow(0px 1px 1px rgba(0,0,0,.2)); border: none; height: inherit;
+        .file-preview-image { height: 100px; }
+      }
+    }
+  }
+}
+
+// SELECT
+
+.bootstrap-select { width: 100% !important; margin-bottom: 0 !important;
+  .selectpicker { @include box-shadow(none); @include border-radius(0px); @include transition(.3s); @include box-shadow(0px 1px 1px rgba(0,0,0,.2)); background-color: $color-grey-light; color: $color-grey-medium;
+    &:focus, &:active { @include box-shadow(0px 1px 1px rgba(0,0,0,.2)); outline: none !important; }
+    &:hover { background-color: darken($color-grey-light, 3%); }
+    .caret { border: none;
+      &:after { @include font-awesome; color: $color-default; content: "\f107"; font-size: 18px; position: absolute; top: -7px; right: -2px; }
+    }
+    .filter-option { @include transition(.3s); padding-left: 0px; position: relative;
+      &:before { @include opacity(0); @include font-awesome; @include transition(.3s); color: $color-default; content: "\f00c"; font-size: 14px; position: absolute; left: 0px; top: 2px; }
+    }
+  }
+  &.show-menu-arrow {
+    .dropdown-toggle {
+      &:after { bottom: -5px; }
+      &:before { border: none; }
+    }
+  }
+  .dropdown-menu { @include border-radius(0px);  border: none; margin-top: 3px; padding: 0; padding-left: 0 !important;
+    &.selectpicker { background-color: #fff !important; }
+    li {
+      &:first-child, &.selected {
+        a { background-color: transparent; color: #9c9c9c; padding-left: 15px;
+          &:hover { background-color: transparent; padding-left: 15px; }
+        }
+      }
+      a { @include transition(.2s); color: $color-grey-medium; padding: 8px 15px;
+        &:hover { background-color: $color-grey-light; padding-left: 20px; }
+      }
+    }
+  }
+  &.open {
+    .selectpicker { @include box-shadow(0px 1px 1px rgba(0,0,0,.2)); @include transition(.3s); }
+  }
+}
+
+.form-search {
+  .bootstrap-select {
+    .selectpicker { font-weight: bold; }
+  }
+}
+
+// DISPLAY TICK ICON AFTER OPTION IS SELECTED
+
+.selected-option-check-a {
+  padding-left: 20px;
+  &:before { @include opacity(1); }
+}
+.selected-option-check {
+  .selectpicker {
+    .filter-option { padding-left: 20px;
+      &:before { @include opacity(1); }
+    }
+  }
+}
+
+.jslider { font-family: 'Roboto', sans-serif; top: 12px;
+  .jslider-value { background-color: transparent; color: #fff;  font-size: 12px; font-weight: bold; }
+  .jslider-bg {
+    i { height: 2px; }
+    .l { background: none; background-color: #fff; }
+    .f { background: none; background-color: #fff;  }
+    .r { background: none; background-color: #fff; }
+    .v { background: none; background-color: $color-default; height: 2px; }
+  }
+  .jslider-pointer { @include box-shadow(0px 1px 1px rgba(0,0,0,.2)); background: url("../img/price-range-dragger.png") no-repeat 50% 50% $color-default; height: 14px; width: 14px; top: 12px;
+    &:before { border-style: solid; border-width: 0 7px 8px 7px; border-color: transparent transparent $color-default transparent; content: ""; height: 0px;  width: 0px; position: absolute; top: -8px; left: 0; }
+  }
+  .jslider-label { color: #fff; }
+}
+
+.price-range { @include transition(.3s); @include box-shadow(0px 1px 1px rgba(0,0,0,.2)); background-color: $color-grey-light; margin-bottom: 20px; padding: 15px 15px 10px;
+  .jslider-label, .jslider-value { color: $color-grey-medium; }
+}
+
+// SEARCHBOX
+
+.search-box-wrapper { z-index: 100; }
+.search-box { @include transition(.4s); @include opacity(0); padding-right: 15px; position: absolute; width: 100%; z-index: 1;
+  &.show-search-box { @include opacity(1); }
+  h2 { border: none; padding-bottom: 0; }
+  .btn { width: 100%; }
+  .nav-pills {
+    li {
+      a { @include border-radius(0px); background-color: transparent; color: $color-grey-dark; }
+    }
+  }
+  .form-map { @include transition(.4s); background-color: rgba(255,255,255,.3); padding: 5px 10px 1px 10px;
+    &:hover { background-color: rgba(255,255,255,.9); }
+    input[type="text"],input[type="email"], input[type="search"], input[type="password"], input[type="number"], textarea, select, .selectpicker, .price-range {
+       background-color: $color-default-darker; border: none; color: #fff; font-size: 14px; font-weight: bold; min-height: 40px; padding: 10px 9px 9px 9px; width: 100%;
+        &:hover { background-color: darken($color-default-darker, 3%); }
+    }
+    .selectpicker {
+      .caret {
+        &:after { color: #fff; }
+      }
+    }
+    .price-range { @include transition(.3s); @include box-shadow(0px 1px 1px rgba(0,0,0,.2)); margin-bottom: 20px; padding: 15px 15px 10px; }
+    .jslider-label, .jslider-value { color: #fff; }
+  }
+}
+.horizontal-search {
+  .search-box-wrapper { padding: 20px 0; position: relative !important; top: inherit !important; background-color: $color-default; //background-color: $color-default-darker;
+    .search-box { padding-right: 0; position: relative;
+      hr { margin-bottom: 10px; margin-top: 10px; }
+      .advanced-search-toggle { padding: 10px 0px; color: #fff; position: absolute; top: 0; right: 0; //float: right;
+        .fa { color: $color-default-darker; margin-left: 5px;  }
+      }
+      .nav-pills {
+        li {
+          &.active {
+            a { @include opacity(1); background-color: $color-default-darker; color: #fff;
+              &:after { @include opacity(1); }
+            }
+          }
+          a { @include transition(.4s); color: #fff; position: relative;
+            &:after { @include opacity(0); @include transition(.4s); width: 0; border-style: solid; border-width: 5px 3.5px 0 3.5px; border-color: $color-default-darker transparent transparent transparent; content: ""; position: absolute; left: 0; right: 0; margin: auto; bottom: -5px; }
+          }
+        }
+      }
+      .form-map { background-color: transparent; padding: 0; margin-top: 20px;
+        input[type="text"],input[type="email"], input[type="search"], input[type="password"], input[type="number"], textarea, select, .selectpicker, .price-range {
+          background-color: #fff; color: $color-grey-medium;
+          &:hover { background-color: $color-grey-light; }
+        }
+        button { background-color: $color-default-darker; }
+        .selectpicker {
+          .caret {
+            &:after { color: $color-default; }
+          }
+        }
+        .jslider-label, .jslider-value { color: $color-grey-medium; }
+      }
+      .advanced-search  { padding-bottom: 20px;
+        h3 { margin-top: 0; }
+      }
+    }
+  }
+}
+.horizontal-search-float {
+  .search-box { padding-right: 0; position: inherit;
+    .nav-pills {
+      li {
+        &.active {
+          a { @include opacity(1); background-color: rgba(255,255,255,.9); color: $color-default-darker; }
+        }
+        a { @include opacity(.7); @include transition(.4s); background-color: rgba(255,255,255,.9); color: $color-grey-medium; }
+      }
+    }
+    .form-map { background-color: rgba(255,255,255,.9); padding: 15px 15px 5px 15px;
+      &:hover { background-color: rgba(255,255,255,1); }
+      input[type="text"],input[type="email"], input[type="search"], input[type="password"], input[type="number"], textarea, select, .selectpicker, .price-range {
+        background-color: $color-default-darker; border: none; color: #fff; font-size: 14px; font-weight: bold; min-height: 40px; padding: inherit; padding-left: 10px; width: 100%;
+        &:hover { background-color: darken($color-default-darker, 3%); }
+      }
+      .price-range {  margin-bottom: 0; padding: 15px 15px 10px; }
+      .jslider-label, .jslider-value { color: #fff; }
+    }
+  }
+}
+
+// FADE IN
+
+.animation-fade-in { @include animation-name(animation-fade-in); @include animation-duration(.2s); @include keyframes(animation-fade-in); }
+@include keyframes(animation-fade-in) {
+  0% {
+    @include opacity(0);
+  }
+  100% {
+    @include opacity(1);
+  }
+}
+
+// FADE OUT
+
+.animation-fade-out { @include animation-name(animation-fade-out); @include animation-duration(.2s); @include keyframes(animation-fade-out); }
+@include keyframes(animation-fade-out) {
+  0% {
+    @include opacity(1);
+  }
+  100% {
+    @include opacity(0);
+  }
+}

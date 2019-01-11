@@ -1,0 +1,53 @@
+a { @include transition(.2s); color: $color-default; outline: none !important;
+  &:hover { text-decoration: none;
+    h1, h2, h3, h4 { color: $color-default;}
+  }
+  &:focus, &:active { outline: none !important; text-decoration: none; }
+  h1, h2, h3, h4 { @include transition(.2s); color: $color-default-darker;}
+}
+
+blockquote { border: none; display: table; margin-bottom: 0; padding: 20px 10%; width: 100%;
+  figure { display: table-cell; vertical-align: middle;
+    .image { background-color: $color-grey-medium; height: 180px; position: relative; overflow: hidden; width: 160px;
+      &:after { bottom: 0px; content: ""; height: 0px; border-style: solid; border-width: 20px 0 0 20px; border-color: transparent transparent transparent #fff; position: absolute; right: 0; width: 0px; }
+      &:before { background-color: #fff; bottom: 0; content: ""; height: 20px; left: 0; width: calc(100% - 20px); position: absolute; z-index: 1; }
+    }
+  }
+  .cite { display: table-cell; vertical-align: middle; padding-left: 30px;
+    p { font-family: Georgia, serif; font-size: 24px; font-style: italic; }
+    footer { color: $color-default-darker; }
+  }
+}
+
+
+body { background-color: #fff; color: $color-grey-medium; font-family: 'Roboto', sans-serif; }
+
+dl { margin-bottom: 10px;
+  dt { float: left; }
+  dd { margin-bottom: 8px; text-align: right;
+    .rating { float: right; position: relative; top: -5px; }
+  }
+}
+
+h1 { font-size: 28px; font-weight: lighter; border-bottom: 1px solid rgba(0,0,0,.1); margin-bottom: 30px; margin-top: 10px; padding-bottom: 15px;}
+h2 { font-size: 24px; font-weight: lighter; border-bottom: 1px solid rgba(0,0,0,.1); margin-bottom: 30px; margin-top: 10px; padding-bottom: 15px; }
+h3 { font-size: 18px; font-weight: lighter; margin-bottom: 20px; }
+h4 { font-size: 14px; font-weight: lighter; }
+hr { border-color: rgba(0,0,0,.1);
+  &.thick { border-width: 2px; }
+  &.divider { border-color: $color-default; border-width: 2px; width: 40px; }
+}
+
+p { @include opacity(.7); font-family: "Arial", sans-serif; }
+
+section { position: relative; }
+
+ul {
+  &.list-links { margin-top: -5px;
+    li {
+      a { @include transition(.2s); color: $color-grey-medium; display: block; padding: 5px 0; padding-left: 0;
+        &:hover { color: $color-default; padding-left: 5px; }
+      }
+    }
+  }
+}

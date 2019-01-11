@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/SpringbootAdmin/SpringbootAdmin.iml" filepath="$PROJECT_DIR$/SpringbootAdmin/SpringbootAdmin.iml" />
+      <module fileurl="file://$PROJECT_DIR$/house-biz/house-biz.iml" filepath="$PROJECT_DIR$/house-biz/house-biz.iml" />
+      <module fileurl="file://$PROJECT_DIR$/house-common/house-common.iml" filepath="$PROJECT_DIR$/house-common/house-common.iml" />
+      <module fileurl="file://$PROJECT_DIR$/house-web/house-web.iml" filepath="$PROJECT_DIR$/house-web/house-web.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/sz.lianjia.iml" filepath="$PROJECT_DIR$/.idea/sz.lianjia.iml" />
+    </modules>
+  </component>
+</project>

@@ -1,0 +1,98 @@
+a {
+  color: #1396e2;
+}
+a:hover {
+  text-decoration: none;
+}
+
+body {
+  color: #2a2a2a;
+  font-family: 'Roboto', sans-serif;
+}
+
+.marker-style {
+  border: 3px solid #1396e2;
+  text-align: center;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  margin-left: -12px !important;
+  margin-top: -35px !important;
+}
+.marker-style img {
+  display: none !important;
+}
+
+.infoBox img {
+  z-index: 1;
+}
+
+.infobox-wrapper {
+  display: none;
+}
+
+.infobox-inner {
+  background: #fff;
+  display: table;
+  font-size: 12px;
+  padding: 10px 30px 10px 10px;
+  margin-top: -160px;
+  min-width: 350px;
+  height: auto;
+  position: relative;
+}
+.infobox-inner hr {
+  margin: 5px 0 10px 0;
+}
+.infobox-inner img {
+  float: left;
+}
+.infobox-inner .infobox-title {
+  font-size: 18px;
+  font-weight: bold;
+}
+.infobox-inner .infobox-title a {
+  color: #2a2a2a;
+}
+.infobox-inner .infobox-description {
+  padding-left: 130px;
+}
+.infobox-inner .infobox-location {
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=50);
+  opacity: 0.5;
+  font-size: 12px;
+}
+.infobox-inner .infobox-price {
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  -ms-border-radius: 2px;
+  -o-border-radius: 2px;
+  border-radius: 2px;
+  -webkit-box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.3);
+  -moz-box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.3);
+  box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.3);
+  float: left;
+  background-color: #1396e2;
+  color: #fff;
+  font-size: 14px;
+  font-weight: bold;
+  padding: 3px 7px;
+}
+.infobox-inner .fa {
+  float: right;
+}
+
+a:hover h3, a:hover h4 { color: #012548; }
+h2 { margin-bottom: 20px; }
+h3 { color: #012548; font-size: 20px; font-weight: normal; margin-bottom: 0; }
+h4 { margin-top: 5px; margin-bottom: 0; }
+.arrow { -webkit-transition: .2s; display: block; margin-top: 10px; position: relative; left: 0; transition: .2s; }
+.description { display: none; -webkit-box-shadow: 0 1px 1px rgba(0,0,0,.2); font-size: 12px; background-color: #ececec; box-shadow: 0 1px 1px rgba(0,0,0,.2); position: absolute; color: #2a2a2a; padding: 5px 10px; top: -45px; }
+.description:after { bottom: -7px; content: ""; height: 0; border-style: solid; border-width: 0 10px 10px 10px; border-color: transparent #ececec transparent transparent; position: absolute; right: 0; width: 0; }
+.logo { padding: 30px 0 15px; text-align: center; }
+.item { -webkit-transition: .2s; transition: .2s; display: block; margin: 15px 0; text-align: center; position: relative; bottom: 0; }
+.item:hover { bottom: 5px; }
+.item img { max-width: 100%; }
+@media (max-width: 767px) {
+    .item { margin-bottom: 60px; }
+}

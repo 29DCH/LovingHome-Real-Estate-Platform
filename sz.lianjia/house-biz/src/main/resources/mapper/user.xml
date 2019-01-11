@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ljq.house.biz.mapper.UserMapper">
+
+    <select id="selectUsers" resultType="user">
+     select * from user
+   </select>
+
+    <select id="selectUsersByQuery" resultType="user">
+        select * from user
+        <where>
+            <if test="id !=null">
+                and id = #{id}
+            </if>
+            <if test="email != null">
+                and email = #{email}
+            </if>
+            <if test="passwd != null">
+                and passwd = #{passwd}
+            </if>
+            <if test="enable != null">
+                and enable = #{enable}
+            </if>
+            <if test="type != null and type!=0">
+                and type = #{type}
+            </if>
+        </where>
+    </select>
+
+    <insert id="insert">
+    insert into user (
+                name,
+                phone,
+                email,
+                aboutme,
+                passwd,
+                avatar,
+                type,
+                create_time,
+                enable
+                )
+                values(
+                #{name},
+                #{phone},
+                #{email},
+                #{aboutme},
+                #{passwd},
+                #{avatar},
+                #{type},
+                #{createTime},
+                #{enable}
+                )
+   </insert>
+
+    <delete id="delete">
+    delete from user
+    where email=#{email}
+   </delete>
+
+    <update id="update">
+        update user
+        <set>
+            <if test="phone !=null and phone != '' ">
+                phone = #{phone},
+            </if>
+            <if test="name !=null and name != '' ">
+                name = #{name},
+            </if>
+            <if test="aboutme !=null and aboutme != '' ">
+                aboutme = #{aboutme},
+            </if>
+            <if test="passwd !=null and passwd != '' ">
+                passwd = #{passwd},
+            </if>
+            <if test="enable !=null ">
+                enable = #{enable},
+            </if>
+        </set>
+        where email = #{email}
+    </update>
+
+    <select id="selectUserCount" resultType="long">
+        select count(*)
+        from user
+    </select>
+</mapper>

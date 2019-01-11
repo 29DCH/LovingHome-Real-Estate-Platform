@@ -1,0 +1,180 @@
+.navigation { @include box-shadow(0px 1px 2px rgba(0,0,0,.15)); background-color: #fff; /*margin-bottom: 20px;*/ position: relative; width: 100%; z-index: 99; top: 0;  //top: 0;
+  &:hover {
+    .secondary-navigation { @include opacity(1); }
+  }
+  .navbar-collapse { padding-right: 0; }
+  .navbar { border: none; margin-bottom: 0; min-height: inherit; padding: 30px 0; /**/ display: table; width: 100%;
+    .collapse { display: table-cell !important; vertical-align: middle; float: none !important; }
+    .navbar-brand { height: inherit; line-height: 0; padding: 0; }
+    .navbar-nav { float: right;
+      > li {
+        &:hover {
+          > .child-navigation { @include opacity(1); visibility: visible; }
+        }
+        &:last-child {
+          a { padding-right: 0; }
+        }
+        &.active {
+          a { @include opacity(1);
+            &:after { @include opacity(1); }
+          }
+          .child-navigation {
+            a { color: $color-grey-medium;
+              &:after { display: none; }
+            }
+            li {
+              &:first-child {
+                a {
+                  &:after { display: block; }
+                }
+              }
+            }
+          }
+          .child-navigation {
+            &.position-bottom {
+              li {
+                &:last-child {
+                  a {
+                    &:after { display: block; }
+                  }
+                }
+              }
+            }
+          }
+        }
+        &.has-child { position: relative;
+          &:after { @include font-awesome; content: "\f0d7"; color: $color-default; font-size: 8px; height: 10px; position: absolute; top: 3px; bottom: 0; margin: auto; right: 2px; }
+        }
+        a { @include opacity(.7); color: $color-grey-dark; line-height: 0;  margin: 0; padding-bottom: 5px; padding-top: 9px; position: relative;
+          &:after { @include opacity(0); @include transition(.2s); background-color: $color-default; bottom: -5px; content: ""; left: 16px; height: 1px; position: absolute; width: 10px; }
+          &:hover { @include opacity(1); background-color: transparent; }
+          &:active, &:focus { background-color: transparent; }
+        }
+        > .child-navigation { margin-top: 11px;
+          &.navigation-to-left { right: 15px; left: inherit;
+            > li {
+              &:first-child {
+                a {
+                  &:after { left: inherit; right: 10px; }
+                }
+              }
+            }
+            &.position-bottom {
+              > li {
+                &:last-child {
+                  a {
+                    &:after { left: inherit; right: 10px; }
+                  }
+                }
+              }
+            }
+          }
+          &.position-bottom { bottom: 25px;
+            > li {
+              &:first-child {
+                a {
+                  &:after { border-color: transparent !important; }
+                }
+              }
+              &:last-child {
+                &:hover {
+                  a {
+                    &:after { border-color: $color-default transparent transparent transparent; }
+                  }
+                }
+                > a {
+                  &:after { @include opacity(1); background-color: transparent; border-color: $color-grey-light transparent transparent transparent; border-style: solid; border-width: 7.5px 7.5px 0 7.5px; content: ""; height: 0px; position: absolute; left: 10px; bottom: -7px; width: 0px; }
+                  &:before { @include opacity(1); background-color: transparent; content: ""; height: 8px; left: 0; width: 100%; position: absolute; bottom: -8px; }
+                }
+              }
+              .child-navigation { bottom: 0; margin-top: inherit; }
+            }
+          }
+          > li { position: relative;
+            &:first-child {
+              &:hover {
+                a {
+                  &:hover {
+                    &:after { border-color: transparent transparent $color-default transparent; }
+                  }
+                }
+              }
+              a {
+                &:after { @include opacity(1); background-color: transparent; border-color: transparent transparent $color-grey-light transparent; border-style: solid; border-width: 0 7.5px 7px 7.5px; content: ""; height: 0px; position: absolute; left: 10px; top: -7px; width: 0px; }
+                &:before { @include opacity(1); background-color: transparent; content: ""; height: 8px; left: 0; width: 100%; position: absolute; top: -8px; }
+              }
+            }
+          }
+        }
+        .child-navigation { @include opacity(0); @include transition(.2s); @include shadow; background-color: $color-grey-light; position: absolute; visibility: hidden; list-style: none; padding-left: 0; left: 15px; min-width: 240px; z-index: 100;
+          li {
+            &:hover {
+              .child-navigation { @include opacity(1); @include transition-delay(.2s); visibility: visible; }
+            }
+            a { border-bottom: 1px solid rgba(0,0,0,.1); display: block; padding: 20px 10px 15px 10px; position: relative;
+              &:hover { @include shadow; background-color: $color-default; color: #fff; }
+            }
+            .child-navigation { @include opacity(0); margin-top: -41px; }
+          }
+        }
+        // Mobile submit button (visible only on mobile devices)
+        &.mobile-submit { display: none; }
+      }
+      li {
+        .child-navigation {
+          li {
+            &.has-child {
+              &:after {  @include opacity(1); @include font-awesome; background-color: transparent; color: $color-default; content: "\f105"; height: 14px; position: absolute; top: 0; bottom: 0; margin: auto;  left: inherit; right: 8px; width: 5px; z-index: 2; }
+              &:hover {
+                &:after { color: #fff; }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  //.add-your-property { position: absolute; bottom: -39px; right: 0;
+  //  figure { @include opacity(.6); display: inline-block; vertical-align: middle; margin-right: 10px; }
+  //  .btn { width: 38px; }
+  //}
+  .add-your-property { position: absolute; right: 0; bottom: -39px; //top: 27px;
+    &:hover {
+      .text { @include opacity(.9); right: 50px; pointer-events: none; }
+    }
+    .btn { width: 38px; //background-color: #fff; color: $color-default-darker; position: absolute; right: 0px; top: 60px; width: 38px;
+      //&:hover { background-color: #fff; color: $color-default; }
+    }
+    .text { @include opacity(0); @include shadow; @include transition(.4s); color: $color-grey-medium; background-color: #fff; padding: 10px; position: absolute; right: 40px; text-align: right; top: 0; pointer-events: none;
+      &:after { width: 0; height: 0; content: ""; border-style: solid; border-width: 4px 0 4px 4px; border-color: transparent transparent transparent #fff; position: absolute; top: 0; right: -4px; bottom: 0; margin: auto; }
+    }
+  }
+  .secondary-navigation { @include opacity(.6); @include transition(.4s); border-bottom: 1px solid $color-grey-light; display: table; font-size: 12px; padding: 5px 0; width: 100%;
+    a { color: $color-grey-medium; margin-left: 10px;
+      &:hover { color: $color-default-darker; }
+      &.promoted { color: $color-default;
+        &:hover { color: $color-default-darker; }
+      }
+    }
+    .contact { float: left;
+      figure { margin-right: 10px;
+        strong { margin-right: 5px; }
+      }
+    }
+    .user-area { float: right;
+      .actions { float: left; }
+      .language-bar { float: right; }
+    }
+    figure { display: inline-block; }
+  }
+}
+
+.navigation-fixed-bottom {
+  .navigation { bottom: 0; position: absolute; top: inherit; }
+}
+
+.navigation-fixed-top {
+  .navigation { top: 0; position: fixed; bottom: inherit; }
+}
+
+.navigation-fix-to-top { position: fixed !important; bottom: inherit !important; top: 0 !important; }

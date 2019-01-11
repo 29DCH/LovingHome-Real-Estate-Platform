@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+
+    <settings>
+        <!-- 配置关闭缓存  -->
+        <setting name="cacheEnabled" value="false"/>
+        <setting name="mapUnderscoreToCamelCase" value="true"/>
+        <setting name="useGeneratedKeys" value="true"/>
+        <setting name="defaultExecutorType" value="REUSE"/>
+        <!-- 事务超时时间 -->
+        <setting name="defaultStatementTimeout" value="600"/>
+    </settings>
+
+    <typeAliases>
+        <typeAlias type="com.ljq.house.common.model.User" alias="user"/>
+        <typeAlias type="com.ljq.house.common.model.Admin" alias="admin"/>
+        <typeAlias type="com.ljq.house.common.model.Agency" alias="agency"/>
+        <typeAlias type="com.ljq.house.common.model.House" alias="house"/>
+        <typeAlias type="com.ljq.house.common.model.City" alias="city"/>
+        <typeAlias type="com.ljq.house.common.model.Comment" alias="comment"/>
+        <typeAlias type="com.ljq.house.common.model.Community" alias="community"/>
+        <typeAlias type="com.ljq.house.common.model.HouseUser" alias="houseUser"/>
+        <typeAlias type="com.ljq.house.common.model.Blog" alias="blog"/>
+        <typeAlias type="com.ljq.house.common.model.UserMsg" alias="userMsg"/>
+    </typeAliases>
+
+    <mappers>
+        <mapper resource="mapper/user.xml"/>
+        <mapper resource="mapper/admin.xml"/>
+        <mapper resource="mapper/blog.xml"/>
+        <mapper resource="mapper/house.xml"/>
+        <mapper resource="mapper/comment.xml"/>
+        <mapper resource="mapper/agency.xml"/>
+    </mappers>
+
+</configuration>

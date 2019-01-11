@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ljq.house.biz.mapper.CommentMapper">
+
+    <sql id="commentField">
+          id,
+		  content,
+		  house_id,
+		  create_time,
+		  blog_id,
+		  type,
+		  user_id
+   </sql>
+
+    <select id="selectComments" resultType="comment">
+        select
+        <include refid="commentField"/>
+        from comment
+        where type =1 and house_id = #{houseId}
+        order by create_time desc
+        limit #{size}
+    </select>
+
+    <select id="selectBlogComments" resultType="comment">
+        select
+        <include refid="commentField"/>
+        from comment
+        where type =2 and blog_id = #{blogId}
+        order by create_time desc
+        limit #{size}
+    </select>
+
+    <insert id="insert">
+      insert into comment(
+				          content,
+						  house_id,
+						  create_time,
+						  blog_id,
+						  type,
+						  user_id)
+                  value(
+                       #{content},
+                       #{houseId},
+                       #{createTime},
+                       #{blogId},
+                       #{type},
+                       #{userId}
+                  )
+    </insert>
+</mapper> 

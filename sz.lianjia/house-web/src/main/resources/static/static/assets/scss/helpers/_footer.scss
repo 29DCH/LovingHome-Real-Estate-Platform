@@ -1,0 +1,28 @@
+#page-footer {
+  .inner { display: table; width: 100%;
+    h3 { color: $color-grey-dark; font-weight: normal; margin-bottom: 30px; margin-top: 0; }
+    #footer-main { background-color: $color-grey-light; padding: 40px 0; }
+    #footer-copyright { background-color: $color-default-darker; color: #fff; display: table; padding: 20px 0; width: 100%;
+      a { color: #fff;
+        &:hover { color: $color-default; }
+      }
+    }
+    .property {
+      &:last-child { margin-bottom: 0 !important; }
+    }
+    // Property thumbnail
+    .property-thumbnail { background-color: $color-default; float: left; height: 60px; overflow: hidden;
+      &:hover {
+        img { @include opacity(1); }
+      }
+      img { -moz-backface-visibility: hidden; -webkit-backface-visibility:hidden; @include transition(.4s); @include opacity(.2); width: 100%; }
+    }
+  }
+}
+
+// Sticky footer
+
+body, html { height: 100%; margin: 0; }
+.wrapper { display: table; height: 100%; width: 100%; }
+#page-content { height: auto; }
+#page-footer { display: table-row; height: 1px; }

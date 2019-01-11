@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ljq.house.biz.mapper.AdminMapper">
+
+    <select id="selectAdmins" resultType="admin">
+     select * from admin
+   </select>
+
+    <select id="selectAdminsByQuery" resultType="admin">
+        select * from admin
+        <where>
+            <if test="name != null and name != '' ">
+                and name = #{name}
+            </if>
+            <if test="pwd != null and pwd != '' ">
+                and pwd = #{pwd}
+            </if>
+            <if test="phone != null and phone != '' ">
+                and phone = #{phone}
+            </if>
+            <if test="email != null and email != '' ">
+                and email = #{email}
+            </if>
+        </where>
+    </select>
+
+    <select id="selectAdminByName" resultType="admin">
+        select * from admin
+        <where>
+            <if test="name != null">
+                and name = #{name}
+            </if>
+        </where>
+    </select>
+
+    <select id="selectAdminById" resultType="admin">
+        select * from admin
+        where id=#{id}
+    </select>
+
+    <insert id="insert">
+    insert into admin (
+                name,
+                pwd,
+                phone,
+                email,
+                img,
+                des,
+                time
+                )
+                values(
+                #{name},
+                #{pwd},
+                #{phone},
+                #{email},
+                #{img},
+                #{des},
+                #{time}
+                )
+   </insert>
+
+    <delete id="delete">
+    delete from admin
+    where id=#{id}
+   </delete>
+
+    <update id="update">
+        update admin
+        <set>
+            <if test="name !=null and name != '' ">
+                name = #{name},
+            </if>
+            <if test="pwd !=null and pwd != '' ">
+                pwd = #{pwd},
+            </if>
+            <if test="phone !=null and phone != '' ">
+                phone = #{phone},
+            </if>
+            <if test="email !=null and email != '' ">
+                email = #{email},
+            </if>
+            <if test="des !=null and des != '' ">
+                des = #{des},
+            </if>
+        </set>
+        where id = #{id}
+    </update>
+
+    <select id="selectAdminCount" resultType="long">
+        select count(*)
+        from admin
+    </select>
+
+</mapper>

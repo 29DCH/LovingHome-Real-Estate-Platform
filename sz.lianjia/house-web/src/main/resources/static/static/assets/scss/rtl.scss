@@ -1,0 +1,290 @@
+@import 'compass/css3/border-radius';
+@import 'compass/css3/box-shadow';
+@import 'compass/css3/box-sizing';
+@import 'compass/css3/text-shadow';
+@import 'compass/css3/transition';
+@import 'compass/css3/transform';
+@import 'compass/css3/background-clip';
+@import 'compass/css3/opacity';
+@import 'compass/css3/filter';
+
+
+@import 'helpers/variables';
+@import 'helpers/mixins';
+//@import 'helpers/elements';
+//@import 'helpers/classes';
+//@import 'helpers/map';
+//@import 'helpers/forms';
+//@import 'helpers/footer';
+//@import 'helpers/header';
+//@import 'helpers/responsive';
+
+body, html { direction: rtl; }
+
+blockquote { border: none;
+  .cite { padding-left: 0px; padding-right: 30px; }
+}
+
+dl {
+  dt { float: right; }
+  dd { text-align: left;
+    .rating { float: left; top: 0; }
+  }
+}
+
+.account-profile {
+  .contact-fields {
+    dd { float: left; }
+  }
+}
+
+.add-your-property { position: absolute; left: 0 !important; bottom: -39px; right: inherit !important; direction: ltr !important;
+  &:hover {
+    .text { left: 50px !important; }
+  }
+  .text { @include opacity(0); @include shadow; @include transition(.4s); color: $color-grey-medium; background-color: #fff; display: table; padding: 10px; position: absolute; left: 40px; text-align: right; top: 0; pointer-events: none; right: 0;
+    &:after { display: none; }
+    &:before { width: 0; height: 0; content: ""; border-style: solid; border-width: 4px 4px 4px 0px; border-color: transparent #fff transparent transparent; position: absolute; top: 0; left: -4px; bottom: 0; margin: auto; }
+  }
+}
+
+.agency {
+  dl {
+    dd { text-align: right; }
+    dt { margin-left: 20px; }
+  }
+}
+
+.bootstrap-select.btn-group .btn .filter-option { text-align: right; padding-right: 5px; }
+
+.checkbox {
+  label { padding-right: 0px !important;
+    .icheckbox { margin-right: 0; margin-left: 10px; }
+  }
+}
+
+.comments { padding-right: 0;
+  .comment { padding-right: 80px; padding-left: inherit;
+    .date { left: 0; right: inherit;
+      .fa { margin-left: 10px; top: -1px; position: relative; }
+    }
+    figure { right: 0; left: inherit; }
+    .reply {
+      .fa { margin-right: 0; margin-left: 10px; }
+    }
+  }
+}
+
+.display-lines {
+  .property {
+    .type { left: 13px; right: inherit; top: 55px; }
+  }
+}
+
+.faq {
+  .tools { left: 40px; }
+}
+
+#form-features, #form-type {
+  .tools {
+    .delete { float: left; margin-left: -20px; }
+  }
+}
+
+.horizontal-search {
+  .search-box {
+    .bootstrap-select.btn-group .btn .filter-option { text-align: right; padding-right: 20px; }
+    .advanced-search-toggle { right: inherit !important; left: 0; }
+    .nav-pills {
+      > li { float: right; }
+    }
+  }
+}
+
+.jslider .jslider-pointer:before { left: 0; }
+
+.link-arrow{
+  &:after { display: none; }
+  &:before { @include font-awesome; color: $color-default; content: "\f104"; left: -5px; position: relative; top: -1px; }
+}
+
+.list-unstyled { padding-right: 0; }
+
+.list-links { padding-right: 15px; }
+
+.navbar-header {
+  float: left !important;
+}
+.navigation .navbar .navbar-nav { float: inherit; padding-right: 0;
+  li {
+    &:last-child {
+      a { padding-right: 10px; }
+    }
+    > ul { padding-right: 0; }
+    .child-navigation {
+      li {
+        &.has-child {
+          &:after { @include font-awesome; background-color: transparent; color: $color-default; content: "\f104"; height: 14px; position: absolute; top: 0; bottom: 0; margin: auto;  left: 8px; right: inherit; width: 5px; z-index: 2; }
+        }
+      }
+    }
+  }
+}
+.navigation .navbar-collapse {
+  padding-left: 0;
+}
+.navbar-nav {
+  > li { float: right;
+    &.active {
+      a {
+        &:after { left: inherit; right: 16px; }
+      }
+    }
+    .child-navigation { left: inherit; right: 15px;
+      li {
+        &:first-child {
+          a {
+            &:after { right: 10px; left: inherit; }
+          }
+        }
+      }
+    }
+  }
+}
+.navigation .navbar .collapse {
+  float: right !important;
+}
+
+.NFI-button {
+  &:before { margin-right: inherit; margin-left: 5px; width: 12px; position: relative; }
+  &:hover {
+    &:before { @include opacity(1); content: "\f07c"; margin-right: inherit; margin-left: 5px; right: -2px; }
+  }
+}
+
+.page-about-us {
+  .agent {
+    .tools { top: 100px; }
+  }
+}
+
+#page-footer {
+  #footer-copyright {
+    .pull-right { float: left !important; }
+  }
+}
+
+.post-author {
+  .wrapper { padding-left: 0; padding-right: 20px; }
+}
+
+.geo-location { right: inherit !important; left: 0 !important; }
+
+#profile {
+  .account-type { right: inherit; left: 0; }
+}
+
+.property-features-list {
+  li { display: inline-block; padding: 5px 0; width: 49%;
+    &:before { display: none; }
+    &:after { @include font-awesome; content: "\f111"; color: $color-default; font-size: 8px; position: relative; bottom: 2px; margin-left: 10px; }
+  }
+}
+
+#search-filter { text-align: left;
+  figure {
+    h3 {
+      i { margin-left: 5px; }
+    }
+  }
+  .sorting {
+    > span {
+      strong { margin-left: 10px; }
+    }
+    span { margin-left: inherit; margin-right: inherit; }
+  }
+}
+
+.secondary-navigation {
+  .container {
+    .contact { float: right;
+      figure { margin-right: 0; margin-left: 10px; float: left; direction: ltr !important;
+        strong { float: right; direction: rtl !important;margin-left: 5px;  }
+      }
+    }
+    .user-area { float: left;
+      .actions { float: right;
+        a { float: right;
+          &:last-child { margin-left: 0; }
+        }
+      }
+      .language-bar { margin-left: 0; margin-right: 10px; }
+    }
+  }
+}
+
+#sidebar {
+  .sidebar-navigation { padding-left: inherit; padding-right: 0;
+    li { border-left: 3px solid transparent; padding-left: 10px; padding-right: 0; border-right: 0px solid transparent;
+      &:hover { border-color: $color-default; padding-left: inherit; padding-right: 5px; border-right: 0px solid transparent;
+        &:after { border-color: transparent $color-default transparent transparent; }
+      }
+      &:after { border-width: 4px 4px 4px 0px; border-color: transparent transparent transparent transparent; left: -7px; right: inherit; }
+
+      &.active { @include shadow; padding-right: 10px; padding-left: inherit; background-color: $color-grey-light; border-color: $color-default-darker;
+        &:after { @include opacity(1); border-color: transparent $color-default-darker transparent transparent; }
+        a { @include box-shadow(none); background-color: transparent !important;
+          &:after { display: none; }
+        }
+        i { display: inline-block; }
+      }
+      a { color: $color-grey-dark; display: block; padding: 10px 0; border: none;
+        &:hover {
+          &:after { display: none; }
+        }
+      }
+      i { color: $color-default; margin-left: 8px; margin-right: inherit; }
+    }
+  }
+}
+
+.submit-features { padding-right: 0; }
+
+.tools { left: 0px; right: inherit; }
+
+.tools-persons {
+  .tools { left: 160px; }
+}
+
+.navigation .add-your-property { left: 0px; right: inherit;
+}
+
+.owl-next {
+  &:after { content: "\f104" !important; }
+}
+.owl-prev {
+  &:after { content: "\f105" !important; }
+}
+
+.property-title .actions { left: 0px; right: inherit;
+  &:hover {
+    span { left: 0px; right: inherit; }
+  }
+  span { left: 25px; right: inherit; }
+}
+
+.radio { margin-right: 0px !important; margin-left: 50px;
+  label { padding-right: 0px;
+    .iradio { margin-left: 10px; margin-right: 0; }
+  }
+}
+
+.section-title {
+  .link-arrow { right: inherit; left: 0; }
+}
+
+.timeline-item {
+  &:after { left: inherit; right: 21px; }
+}
+
+.verified { left: inherit; right: 0px; }

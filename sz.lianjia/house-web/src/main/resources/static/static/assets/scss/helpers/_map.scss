@@ -1,0 +1,79 @@
+#map { width: 100%; height: 700px; }
+#contact-map { height: 300px; width: 100%; }
+
+// Google map marker
+
+.marker-style { border: 3px solid $color-default; text-align: center; width: 34px; height: 34px; border-radius: 50%; margin-left: -17px !important; margin-top: -46px !important;
+  img { position: absolute !important; top: -1px !important; bottom: 0px !important; right: 0px; left: 0px; margin: auto !important; }
+}
+.cluster {
+  > div { color: #fff !important; text-align: center !important; z-index: 3;
+    &:before { @include border-radius(50%); background-color: $color-default; content: ""; height: 31px; position: absolute; top: 0; bottom: 0; right: 0; left: 0; margin: auto; width: 31px; z-index: -1; }
+  }
+
+}
+
+// Leaflet Popup
+
+.leaflet-div-icon { @include transition(.4s);  background-color: transparent; border: none; background-image: url("../img/marker.png");
+  &:after { @include transition(.4s); @include opacity(1); @include border-radius(50%); border: 3px solid $color-default; content: ""; display: block; height: 34px; left: 3px; position: absolute; top: 3px; width: 34px; z-index: 2; }
+  &:hover { top: -5px; }
+  img { position: absolute; left: 0px; right: 0px; margin: auto; top: -10px; bottom: 0px; }
+}
+
+.leaflet-container { font: inherit; }
+.leaflet-popup {
+  .leaflet-popup-close-button { @include opacity(.8); background: #fff !important; color: $color-grey-dark !important; height: 25px !important; top: 10px !important; padding: 4px !important; right: 10px !important; width: 25px !important; z-index: 2; }
+  .leaflet-popup-content-wrapper { @include border-radius(0px); @include shadow; padding: 0;
+    .leaflet-popup-content { border-bottom: 5px solid #fff; border-top: 5px solid $color-default-darker; height: 206px; width: 260px; margin: 0; overflow: hidden;
+      .property { margin-bottom: 0;
+        &:hover {
+          img { top: 0; }
+        }
+        .overlay { bottom: 0px; }
+      }
+    }
+  }
+}
+
+.infobox-wrapper {
+  > img { @include opacity(.5); @include transition(.4s); position: absolute !important; right: 8px; top: 13px; z-index: 2;
+      &:hover { @include opacity(1); }
+  }
+  .infobox-inner { @include box-shadow(0px 2px 2px rgba(0,0,0,.2)); background: #fff; border-top: 6px solid $color-default-darker; font-size:12px; position: relative; margin-bottom: 50px; min-width: 200px;
+    &:after { width: 0px; height: 0px; border-style: solid; border-width: 6px 6px 0 6px; border-color: #fff transparent transparent transparent; position: absolute; left: 95px; content: ""; bottom: -6px; }
+    .infobox-image { width: 250px; height: auto; overflow: hidden; position: relative;
+      &:after { @include image-gradient; display: block; content: ""; position: absolute; width: 100%; height: 100%; top: 0; }
+      img { width: 100%; }
+      .infobox-price { @include border-radius(2px); @include box-shadow(0px 1px 2px rgba(0,0,0,.3)); background-color: $color-default; color: #fff; font-size: 14px; font-weight: bold; padding: 3px 7px; position: absolute; bottom: 8px; left: 8px; z-index: 2; }
+    }
+    .infobox-title { font-size: 14px; font-weight: bold;
+      a { color: $color-default-darker; }
+    }
+    .infobox-description { padding: 8px; }
+    .infobox-location { @include opacity(.5); font-size: 12px; }
+    .fa { color: $color-default; float: right; font-size: 18px; margin-top: 4px;  }
+  }
+}
+
+.marker-hover { opacity: .5; }
+
+// Search box
+
+.search-box-wrapper { position: absolute; width: 100%; top: 0px;
+  .search-box-inner {
+    h2 { margin-bottom: 20px; }
+  }
+}
+
+#submit-map { margin-bottom: 20px; }
+
+.fade-map { @include transition(.4s); @include opacity(.3); }
+
+.map-osm {
+  #map { z-index: 0; position: relative; }
+}
+
+.marker-cluster { @include border-radius(50%); @include transition(.4s); color: #fff; width: 32px; height: 38px; background-color: $color-default; text-align: center; font-size: 14px; font-weight: bold; line-height: 38px;
+  &:hover { background-color: $color-default-darker; }
+}

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ljq.house.biz.mapper.BlogMapper">
+
+    <sql id="blogField">
+         id,tags ,content,create_time,title
+     </sql>
+
+    <select id="selectBlog" resultType="blog">
+        select
+        <include refid="blogField"/>
+        from blog a
+        <where>
+            <if test="blog.id != null   and blog.id != 0">
+                and id = #{blog.id}
+            </if>
+        </where>
+        order by a.create_time desc
+        <if test='pageParams.offset != null and pageParams.limit != null'>
+            limit #{pageParams.offset}, #{pageParams.limit}
+        </if>
+        <if test='pageParams.offset == null and pageParams.limit != null'>
+            limit #{pageParams.limit}
+        </if>
+    </select>
+
+    <select id="selectBlogCount" resultType="long">
+        select count(id)
+        from blog a
+        <where>
+            <if test="id != null and id != 0">
+                and id = #{id}
+            </if>
+        </where>
+        order by a.create_time desc
+    </select>
+
+</mapper> 
