@@ -31,6 +31,14 @@
 ![image](https://github.com/29DCH/LovingHome-Real-Estate-Platform/blob/master/img/12.png)
 
 
+
+最热推荐：
+
+
+![image](https://github.com/29DCH/LovingHome-Real-Estate-Platform/blob/master/img/14.png)
+
+
+
 评价打分：
 
 
