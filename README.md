@@ -5,9 +5,84 @@
 先简单放几张项目的图吧,视频演示放到上面去了。
 
 
-![image]()
+
+前台首页：
 
 
+![image](https://github.com/29DCH/LovingHome-Real-Estate-Platform/blob/master/img/1.png)
+
+
+后台管理：
+
+
+![image](https://github.com/29DCH/LovingHome-Real-Estate-Platform/blob/master/img/1.png)
+
+
+
+后台管理：
+
+
+![image](https://github.com/29DCH/LovingHome-Real-Estate-Platform/blob/master/img/1.png)
+
+
+后台管理：
+
+
+![image](https://github.com/29DCH/LovingHome-Real-Estate-Platform/blob/master/img/1.png)
+
+
+后台管理：
+
+
+![image](https://github.com/29DCH/LovingHome-Real-Estate-Platform/blob/master/img/1.png)
+
+
+后台管理：
+
+
+![image](https://github.com/29DCH/LovingHome-Real-Estate-Platform/blob/master/img/1.png)
+
+
+后台管理：
+
+
+![image](https://github.com/29DCH/LovingHome-Real-Estate-Platform/blob/master/img/1.png)
+
+
+后台管理：
+
+
+![image](https://github.com/29DCH/LovingHome-Real-Estate-Platform/blob/master/img/1.png)
+
+
+后台管理：
+
+
+![image](https://github.com/29DCH/LovingHome-Real-Estate-Platform/blob/master/img/1.png)
+
+
+后台管理：
+
+
+![image](https://github.com/29DCH/LovingHome-Real-Estate-Platform/blob/master/img/1.png)
+
+
+后台管理：
+
+
+![image](https://github.com/29DCH/LovingHome-Real-Estate-Platform/blob/master/img/1.png)
+
+
+后台管理：
+
+
+![image](https://github.com/29DCH/LovingHome-Real-Estate-Platform/blob/master/img/1.png)
+
+
+后台管理：
+
+
+![image](https://github.com/29DCH/LovingHome-Real-Estate-Platform/blob/master/img/1.png)
 
 
 
