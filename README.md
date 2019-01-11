@@ -18,7 +18,7 @@
 Spring+SpringMvc+MyBatis框架
 
 
-Redis缓存(Jedis客户端)实时热门数据统计
+Redis缓存(Jedis客户端+连接池)实时热门数据统计
 
 
 Spring Mail + Spring Task完成异步发送激活链接，邮件发送，验证
@@ -54,7 +54,7 @@ Mysql
 
 SpringBoot CORS实现跨域
 
-Echarts图表展示
+Echarts、HighCharts图表展示
 
 poi报表导入导出
 
