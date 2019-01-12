@@ -1,14 +1,15 @@
-(Î´ÖØ¹¹)
-Î¢·şÎñ²¿·Ö
-Spring Cloud:
-Eureka·şÎñ×¢²á·¢ÏÖ
-RestTemplateÔ¶³ÌÍ¨ĞÅ
-Hystrix¶ÏÂ·Æ÷
-ELKÈÕÖ¾¼ìË÷(Elasticsearch,Logstash,Kibana)
-Sleuth
-Zipkin Dashboard(·Ö²¼Ê½×·×Ù)
-JWT(Token¼¼Êõ,ÓÃÓÚ·Ö²¼Ê½»·¾³ÏÂµÄÉí·İÑéÖ¤ÎÊÌâ£¬Json Web TokenÊµÏÖÉí·İÈÏÖ¤ºÍ¼øÈ¨)
-Î¢·şÎñ¼à¿Ø(Eureka,Hystrix Dashboard)
-Ò»¸ö·şÎñÅäÖÃÒ»¸öÊı¾İ¿â
-SpringCloud RibbonÊµÏÖ¸ºÔØ¾ùºâ
+ä¼ ç»ŸjavawebæŠ€æœ¯ç‚¹éƒ¨åˆ†è§readme.mdæ–‡æ¡£
 
+(æœªé‡æ„)
+å¾®æœåŠ¡éƒ¨åˆ†
+Spring Cloud:
+EurekaæœåŠ¡æ³¨å†Œå‘ç°
+RestTemplateè¿œç¨‹é€šä¿¡
+Hystrixæ–­è·¯å™¨
+ELKæ—¥å¿—æ£€ç´¢(Elasticsearch,Logstash,Kibana)
+Sleuth
+Zipkin Dashboard(åˆ†å¸ƒå¼è¿½è¸ª)
+JWT(TokenæŠ€æœ¯,ç”¨äºåˆ†å¸ƒå¼ç¯å¢ƒä¸‹çš„èº«ä»½éªŒè¯é—®é¢˜ï¼ŒJson Web Tokenå®ç°èº«ä»½è®¤è¯å’Œé‰´æƒ)
+å¾®æœåŠ¡ç›‘æ§(Eureka,Hystrix Dashboard)
+ä¸€ä¸ªæœåŠ¡é…ç½®ä¸€ä¸ªæ•°æ®åº“
+SpringCloud Ribbonå®ç°è´Ÿè½½å‡è¡¡
