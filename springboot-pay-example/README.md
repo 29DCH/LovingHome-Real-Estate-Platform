@@ -24,12 +24,10 @@
 
 
 # 支付集成步骤
-支付宝支付和微信支付具体集成步骤已经详细的记录在博客里了，如果不熟悉支付宝集成或者微信支付集成的，请移步下面博客
 
 注意：微信支付坑很多很多，而且sdk写得过于简陋，很多必要的功能更都没有给出实现，关于坑和一些必要的逻辑实现在example和博客中都指出来。 
 
 - [Spring Boot入门教程(三十五):支付宝集成-准备工作](https://blog.csdn.net/vbirdbest/article/details/80635194)
-
 - [Spring Boot入门教程(三十六):支付宝集成-当面付](https://blog.csdn.net/vbirdbest/article/details/80655716)
 - [Spring Boot入门教程(三十七):支付宝集成-手机网站支付](https://blog.csdn.net/vbirdbest/article/details/80684460)
 - [Spring Boot入门教程(三十八):支付宝集成-电脑网站支付](https://blog.csdn.net/vbirdbest/article/details/80696690)
