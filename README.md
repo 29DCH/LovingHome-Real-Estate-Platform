@@ -1,6 +1,6 @@
 # LoveHome-Real-Estate-Platform
 
-### 我的JavaWeb课设项目(前台部分模仿链家网，后台用了H-ui框架。其中可能涉及一些链家网、H-ui等相关的信息，在这里说明，本项目仅供交流学习，不得用于商业传播等）
+### 我的JavaWeb毕设项目(前台部分模仿链家网，后台用了H-ui框架。其中可能涉及一些链家网、H-ui等相关的信息，在这里说明，本项目仅供交流学习，不得用于商业传播等）
 
 
 基于springboot+MyBatis+FreeMarker+redis+nginx等技术的JavaWeb项目------恋家房产平台
